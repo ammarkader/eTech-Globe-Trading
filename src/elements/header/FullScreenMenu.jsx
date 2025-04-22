@@ -106,10 +106,10 @@ function FullScreenMenu({ show, onSetToggle }) {
                 <Link to="/services"> Our Services </Link>
               </li>
               <li>
-                <Link to="/about-us"> About Us </Link>
+                <Link to="/about"> About Us </Link>
               </li>
               <li>
-                <Link to="/contact-us"> Contact Us </Link>
+                <Link to="/contact"> Contact Us </Link>
               </li>
             </ul>
           </div>
