@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import Img1 from "@/assets/img-oil-1.jpg";
@@ -27,12 +27,6 @@ import Img333333 from "@/assets/img-minerals-3.jpg";
 import Img444444 from "@/assets/img-minerals-4.jpg";
 import Img555555 from "@/assets/img-minerals-5.jpg";
 import Img666666 from "@/assets/img-minerals-6.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import { Navigation, EffectFade } from "swiper";
 
 const productsData = [
   {
@@ -259,19 +253,18 @@ const productsData = [
 
 function ProductCategories({ isHome }) {
   const [activePopup, setActivePopup] = useState(null);
-  const prevBtnRef = useRef(null);
-  const nextBtnRef = useRef(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const openPopup = (id) => {
     setActivePopup(id);
+    setCurrentSlideIndex(0);
     document.body.style.overflow = "hidden";
   };
 
-  const handlePopupClose = () => {
+  const closePopup = () => {
     gsap.to(".product-popup__wrapper", {
       opacity: 0,
-      duration: 0.3,
-      ease: "none",
+      duration: 0.5,
       onComplete: () => {
         setActivePopup(null);
         document.body.style.overflow = "auto";
@@ -279,18 +272,62 @@ function ProductCategories({ isHome }) {
     });
   };
 
+  const handleNext = (totalSlides) => {
+    if (currentSlideIndex < totalSlides - 1) {
+      const current = document.querySelectorAll(
+        `.product-slide-${activePopup}`
+      )[currentSlideIndex];
+      const next = document.querySelectorAll(`.product-slide-${activePopup}`)[
+        currentSlideIndex + 1
+      ];
+
+      gsap.to(current, { opacity: 0, duration: 0 });
+      gsap.fromTo(next, { opacity: 0 }, { opacity: 1, duration: 0 });
+
+      setCurrentSlideIndex((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentSlideIndex > 0) {
+      const current = document.querySelectorAll(
+        `.product-slide-${activePopup}`
+      )[currentSlideIndex];
+      const prev = document.querySelectorAll(`.product-slide-${activePopup}`)[
+        currentSlideIndex - 1
+      ];
+
+      gsap.to(current, { opacity: 0, duration: 0 });
+      gsap.fromTo(prev, { opacity: 0 }, { opacity: 1, duration: 0 });
+
+      setCurrentSlideIndex((prev) => prev - 1);
+    }
+  };
+
   useEffect(() => {
-    if (activePopup) {
+    if (activePopup !== null) {
       gsap.fromTo(
         ".product-popup__wrapper",
         { opacity: 0 },
-        { opacity: 1, duration: 0.4, ease: "none" }
+        { opacity: 1, duration: 0.4 }
       );
       gsap.fromTo(
         ".product-popup__container",
         { opacity: 0, scale: 0.99 },
-        { opacity: 1, scale: 1, duration: 0.4, ease: "power2.in" }
+        { opacity: 1, scale: 1, duration: 0.4 }
       );
+
+      const handleKeyDown = (e) => {
+        if (e.key === "Escape") {
+          closePopup();
+        }
+      };
+
+      window.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     }
   }, [activePopup]);
 
@@ -315,20 +352,16 @@ function ProductCategories({ isHome }) {
               <p>{category.description}</p>
             </div>
           </div>
+
           {activePopup === category.id && (
-            <div
-              className="product-popup__wrapper"
-              role="dialog"
-              aria-labelledby="popup-title"
-              aria-hidden="false"
-            >
+            <div className="product-popup__wrapper">
               <div className="product-popup__container">
                 <div className="close__container">
                   <button
                     type="button"
                     className="close-btn"
+                    onClick={closePopup}
                     aria-label="Close popup"
-                    onClick={handlePopupClose}
                   >
                     <svg
                       id="Layer_1"
@@ -341,53 +374,48 @@ function ProductCategories({ isHome }) {
                     </svg>
                   </button>
                 </div>
+
                 <div className="popup__container">
-                  <Swiper
-                    className="popup-products-slider"
-                    slidesPerView={1}
-                    effect="fade"
-                    modules={[EffectFade, Navigation]}
-                    navigation={{
-                      prevEl: prevBtnRef.current,
-                      nextEl: nextBtnRef.current,
-                    }}
-                    onInit={(swiper) => {
-                      swiper.params.navigation.prevEl = prevBtnRef.current;
-                      swiper.params.navigation.nextEl = nextBtnRef.current;
-                      swiper.navigation.init();
-                      swiper.navigation.update();
-                    }}
-                  >
-                    {category.products.map((product) => (
-                      <SwiperSlide key={product.id}>
-                        <div className="product">
-                          <div className="product-image">
-                            <img src={product.image} alt={product.alt} />
-                          </div>
-                          <div className="product-content">
-                            <div className="section-content">
-                              <div className="heading">
-                                <h2>{product.title}</h2>
-                                <p>{product.description}</p>
-                                <div className="cta">
-                                  <Link
-                                    to="/contact"
-                                    onClick={handlePopupClose}
-                                  >
-                                    <span className="fade-out-text">
-                                      Learn More
-                                    </span>
-                                  </Link>
-                                </div>
+                  {category.products.map((product, index) => (
+                    <div
+                      key={product.id}
+                      className={`product-slide product-slide-${category.id}`}
+                      style={{
+                        display: index === currentSlideIndex ? "block" : "none",
+                        opacity: 1,
+                        zIndex: index === 0 ? 10 : 1,
+                      }}
+                    >
+                      <div className="product">
+                        <div className="product-image">
+                          <img src={product.image} alt={product.alt} />
+                        </div>
+                        <div className="product-content">
+                          <div className="section-content">
+                            <div className="heading">
+                              <h2>{product.title}</h2>
+                              <p>{product.description}</p>
+                              <div className="cta">
+                                <Link to="/contact" onClick={closePopup}>
+                                  <span className="fade-out-text">
+                                    Learn More
+                                  </span>
+                                </Link>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                      </div>
+                    </div>
+                  ))}
+
                   <div className="custom-navigation__container">
-                    <div className="swiper-button-prev" ref={prevBtnRef}>
+                    <button
+                      className={`swiper-button-prev ${
+                        currentSlideIndex > 0 ? "" : "fade"
+                      }`}
+                      onClick={handlePrev}
+                    >
                       <svg
                         width="19"
                         height="10"
@@ -410,8 +438,15 @@ function ProductCategories({ isHome }) {
                           strokeLinejoin="round"
                         ></path>
                       </svg>
-                    </div>
-                    <div className="swiper-button-next" ref={nextBtnRef}>
+                    </button>
+                    <button
+                      className={`swiper-button-next ${
+                        currentSlideIndex < category.products.length - 1
+                          ? ""
+                          : "fade"
+                      }`}
+                      onClick={() => handleNext(category.products.length)}
+                    >
                       <svg
                         width="19"
                         height="10"
@@ -434,7 +469,7 @@ function ProductCategories({ isHome }) {
                           strokeLinejoin="round"
                         ></path>
                       </svg>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -13,11 +13,11 @@
   }
 
   @include respond-below(sm) {
-    padding: 110px 0;
+    padding: 110px 0 20px;
   }
 
   @include respond-below(xs) {
-    padding: 90px 0;
+    padding: 90px 0 20px;
   }
 
   .contactpage-form__container {

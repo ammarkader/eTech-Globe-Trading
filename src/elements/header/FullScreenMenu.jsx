@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import gsap from "gsap";
 import Logo from "@/assets/img-logo.webp";
 import "@/styles/modules/header/_header_fullscreen_menu.scss";
@@ -97,19 +97,29 @@ function FullScreenMenu({ show, onSetToggle }) {
           <div className="section-main__container">
             <ul className="main-menu__container">
               <li>
-                <Link to="/"> Home </Link>
+                <NavLink to="/" onClick={() => onSetToggle(false)}>
+                  Home
+                </NavLink>
               </li>
               <li>
-                <Link to="/products"> Our Products </Link>
+                <NavLink to="/products" onClick={() => onSetToggle(false)}>
+                  Our Products
+                </NavLink>
               </li>
               <li>
-                <Link to="/services"> Our Services </Link>
+                <NavLink to="/services" onClick={() => onSetToggle(false)}>
+                  Our Services
+                </NavLink>
               </li>
               <li>
-                <Link to="/about"> About Us </Link>
+                <NavLink to="/about" onClick={() => onSetToggle(false)}>
+                  About Us
+                </NavLink>
               </li>
               <li>
-                <Link to="/contact"> Contact Us </Link>
+                <NavLink to="/contact" onClick={() => onSetToggle(false)}>
+                  Contact Us
+                </NavLink>
               </li>
             </ul>
           </div>

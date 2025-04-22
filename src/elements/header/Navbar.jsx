@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "@/assets/img-logo.webp";
 import "@/styles/modules/header/_header_navbar.scss";
 
@@ -14,16 +14,16 @@ function Navbar({ show, onSetToggle }) {
         <div className="navbar-links__container" aria-label="Main navigation">
           <ul>
             <li>
-              <Link to="/products">Our Products</Link>
+              <NavLink to="/products">Our Products</NavLink>
             </li>
             <li>
-              <Link to="/services">Our Services</Link>
+              <NavLink to="/services">Our Services</NavLink>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <NavLink to="/about">About Us</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <NavLink to="/contact">Contact Us</NavLink>
             </li>
           </ul>
         </div>
