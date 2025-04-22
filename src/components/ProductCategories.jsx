@@ -31,6 +31,7 @@ import Img666666 from "@/assets/img-minerals-6.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import { Navigation, EffectFade } from "swiper/modules";
 
 const productsData = [
