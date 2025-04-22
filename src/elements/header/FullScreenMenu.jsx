@@ -97,7 +97,7 @@ function FullScreenMenu({ show, onSetToggle }) {
           <div className="section-main__container">
             <ul className="main-menu__container">
               <li>
-                <Link to="/index"> Home </Link>
+                <Link to="/"> Home </Link>
               </li>
               <li>
                 <Link to="/products"> Our Products </Link>
