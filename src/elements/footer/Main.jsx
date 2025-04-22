@@ -1,0 +1,94 @@
+import { Link } from "react-router-dom";
+import Logo from "@/assets/img-logo.webp";
+import "@/styles/modules/footer/_footer_main.scss";
+
+function Main() {
+  return (
+    <section
+      className="footer-main__wrapper"
+      aria-labelledby="footer-main-heading"
+    >
+      <div className="footer-main__container">
+        <div className="section-left__container">
+          <div className="logo">
+            <Link to="/" aria-label="Go to homepage">
+              <img src={Logo} alt="ETech Logo" />
+            </Link>
+          </div>
+          <div className="description">
+            <p>
+              With decades of experience and a global network of trusted
+              partners, we provide high-quality products and innovative
+              solutions across various industries. Our commitment to excellence
+              and sustainability ensures that we deliver reliable, tailored
+              results to drive your business forward.
+            </p>
+          </div>
+        </div>
+        <div className="section-right__container">
+          <div className="links">
+            <div className="title">
+              <h3>Menu</h3>
+            </div>
+            <ul>
+              <li>
+                <Link to="/products" aria-label="Our Products">
+                  Our Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" aria-label="Our Services">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" aria-label="About Us">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" aria-label="Contact Us">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="contact">
+            <div className="title">
+              <h3>Contact</h3>
+            </div>
+            <div className="content">
+              <p className="address">
+                <a
+                  href="https://www.google.com/maps?q=Office+No.43-44+Dubai+Municipality+Bur+Dubai+Al+Fahidi"
+                  aria-label="View our office location on Google Maps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Office No.43-44, <br />
+                  Dubai Municipality, Bur Dubai, <br />
+                  Al Fahidi
+                </a>
+              </p>
+              <p className="email">
+                <a
+                  href="mailto:info@etechglobe.com"
+                  aria-label="Send us an email"
+                >
+                  info@etechglobe.com
+                </a>
+              </p>
+              <p className="phone">
+                <a href="tel:1234567890" aria-label="Call us at 1234567890">
+                  1234567890
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Main;

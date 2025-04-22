@@ -1,0 +1,130 @@
+.fullscreen-menu__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  transform-origin: center center;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, visibility;
+  background-color: rgba($color: $color-gray-700, $alpha: 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  .fullscreen-menu-inner__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    .fullscreen-menu__container {
+      width: 100%;
+      max-width: 380px;
+      height: 100%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      background-color: $color-black;
+      position: relative;
+      will-change: transform;
+
+      .section-top__container,
+      .section-main__container,
+      .section-bottom__container {
+        width: 100%;
+      }
+
+      .section-top__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+          width: 120px;
+
+          a {
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .close-btn {
+          all: unset;
+          cursor: pointer;
+
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: $color-white;
+          }
+        }
+      }
+
+      .section-main__container {
+        margin: auto 0;
+
+        .main-menu__container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            width: 100%;
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+
+            a {
+              display: inline-block;
+              @extend .font-text__style1;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .section-bottom__container {
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+
+          .address,
+          .email,
+          .phone {
+            width: 100%;
+            max-width: 280px;
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+
+            a {
+              display: inline-block;
+              @extend .font-text__style3;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
