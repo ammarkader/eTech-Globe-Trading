@@ -81,17 +81,17 @@ const productsData = [
     products: [
       {
         id: "product-1111",
-        title: "Cocopeat",
+        title: "Premium Cocopeat",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+          "Our superior cocopeat offers exceptional water retention and aeration for optimal plant growth. Made from processed coconut husks, this sustainable growing medium features balanced pH, low EC levels, and superior root development properties.",
         image: Img2222,
-        alt: "An image of Cocopeat",
+        alt: "An image of Premium Cocopeat",
       },
       {
         id: "product-2222",
         title: "Sulphur",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+          "Sulfur in different forms, shapes, sizes and quality parameters is generally used for manufacturing fertilisers, as bleaching agents, as Bi-sulfates, Carbon disulfides and Sulfites, as Granular Sulphur 99.95%.",
         image: Img3333,
         alt: "An image of Sulphur",
       },
