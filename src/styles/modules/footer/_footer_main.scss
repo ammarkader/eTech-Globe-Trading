@@ -76,6 +76,10 @@
         @include respond-below(sm) {
           width: 50%;
         }
+
+        @include breakpoint(499px) {
+          width: 100%;
+        }
       }
 
       .links {
@@ -132,6 +136,10 @@
       }
 
       .links {
+        @include breakpoint(499px) {
+          display: none;
+        }
+
         ul {
           width: 100%;
           display: flex;

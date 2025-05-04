@@ -149,11 +149,11 @@
 
             @include respond-below(sm) {
               width: 84%;
+              height: 100%;
             }
 
             @include respond-below(xs) {
               width: 100%;
-              height: 100%;
             }
 
             .close__container {
@@ -195,10 +195,6 @@
               position: relative;
               background-color: $color-white;
 
-              @include respond-below(lg) {
-                height: 60vh;
-              }
-
               @include respond-below(sm) {
                 flex-direction: column;
                 height: 100%;
@@ -206,7 +202,6 @@
 
               @include respond-below(xs) {
                 width: 100%;
-                height: 100%;
               }
 
               .product-slide {

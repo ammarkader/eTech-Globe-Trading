@@ -127,7 +127,7 @@ function FullScreenMenu({ show, onSetToggle }) {
             <div className="content">
               <p className="address">
                 <a href="mailto:info@etechglobe.com" target="_blank">
-                  ETECH Globe FZCO <br />
+                  ETECH Trading Globe FZCO <br />
                   IFZA Business Park, DDP, Building A1, Dubai Digital Park,
                   Dubai Silicon Oasis, Dubai
                 </a>

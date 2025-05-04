@@ -78,7 +78,7 @@ function Main() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ETECH Globe FZCO <br />
+                  ETECH Globe Trading FZCO <br />
                   IFZA Business Park, DDP, <br />
                   Building A1, Dubai Digital Park, <br />
                   Dubai Silicon Oasis, Dubai
