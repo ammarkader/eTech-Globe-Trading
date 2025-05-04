@@ -31,134 +31,6 @@ import Img666666 from "@/assets/img-minerals-6.jpg";
 const productsData = [
   {
     id: "category-1",
-    title: "Edible Oils",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img1,
-    alt: "An image of Edible Oils",
-    products: [
-      {
-        id: "product-11",
-        title: "Olive Oil",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img2,
-        alt: "An image of Olive Oil",
-      },
-      {
-        id: "product-22",
-        title: "Coconut Oil",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img3,
-        alt: "An image of Coconut Oil",
-      },
-      {
-        id: "product-33",
-        title: "Groundnut Oil",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img4,
-        alt: "An image of Groundnut Oil",
-      },
-    ],
-  },
-  {
-    id: "category-2",
-    title: "Sugar & Spices",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img11,
-    alt: "An image of Sugar & Spices",
-    products: [
-      {
-        id: "product-21",
-        title: "Lentils",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img22,
-        alt: "An image of Lentils",
-      },
-      {
-        id: "product-22",
-        title: "Refined Sugar",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img33,
-        alt: "An image of Refined Sugar",
-      },
-      {
-        id: "product-23",
-        title: "Cardamon",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img44,
-        alt: "An image of Cardamon",
-      },
-    ],
-  },
-  {
-    id: "category-3",
-    title: "Rice",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img111,
-    alt: "An image of Rice",
-    products: [
-      {
-        id: "product-111",
-        title: "Broken Rice",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img222,
-        alt: "An image of Broken Rice",
-      },
-      {
-        id: "product-222",
-        title: "Brown Rice",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img333,
-        alt: "An image of Brown Rice",
-      },
-      {
-        id: "product-333",
-        title: "Parboiled Rice",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img444,
-        alt: "An image of Parboiled Rice",
-      },
-    ],
-  },
-  {
-    id: "category-4",
-    title: "Agriculture Fertilizers",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img1111,
-    alt: "An image of Agriculture Fertilizers",
-    products: [
-      {
-        id: "product-1111",
-        title: "Cocopeat",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img2222,
-        alt: "An image of Cocopeat",
-      },
-      {
-        id: "product-2222",
-        title: "Sulphur",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img3333,
-        alt: "An image of Sulphur",
-      },
-    ],
-  },
-  {
-    id: "category-5",
     title: "Energy",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
@@ -200,7 +72,51 @@ const productsData = [
     ],
   },
   {
-    id: "category-6",
+    id: "category-2",
+    title: "Agriculture Fertilizers",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
+    image: Img1111,
+    alt: "An image of Agriculture Fertilizers",
+    products: [
+      {
+        id: "product-1111",
+        title: "Cocopeat",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img2222,
+        alt: "An image of Cocopeat",
+      },
+      {
+        id: "product-2222",
+        title: "Sulphur",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img3333,
+        alt: "An image of Sulphur",
+      },
+    ],
+  },
+  {
+    id: "category-3",
+    title: "Palm Oil & Bi Products",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
+    image: Img555555,
+    alt: "An image of Palm Oil & Bi Products",
+    products: [
+      {
+        id: "product-111111",
+        title: "Chrome",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img111111,
+        alt: "An image of Chrome",
+      },
+    ],
+  },
+  {
+    id: "category-4",
     title: "Minerals",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
@@ -246,6 +162,330 @@ const productsData = [
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
         image: Img666666,
         alt: "An image of Lime Stone",
+      },
+    ],
+  },
+  {
+    id: "category-5",
+    title: "Edible Oils",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
+    image: Img1,
+    alt: "An image of Edible Oils",
+    products: [
+      {
+        id: "product-11",
+        title: "Olive Oil",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img2,
+        alt: "An image of Olive Oil",
+      },
+      {
+        id: "product-22",
+        title: "Coconut Oil",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img3,
+        alt: "An image of Coconut Oil",
+      },
+      {
+        id: "product-33",
+        title: "Groundnut Oil",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img4,
+        alt: "An image of Groundnut Oil",
+      },
+    ],
+  },
+  {
+    id: "category-6",
+    title: "Livestocks",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
+    image: Img1,
+    alt: "An image of Livestocks",
+    products: [
+      {
+        id: "product-11",
+        title: "Olive Oil",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img2,
+        alt: "An image of Olive Oil",
+      },
+    ],
+  },
+  {
+    id: "category-7",
+    title: "Sugar",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img11,
+    alt: "An image of Sugar",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-8",
+    title: "Spices",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img11,
+    alt: "An image of Spices",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-9",
+    title: "Tin Fishes",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img11,
+    alt: "An image of Tin Fishes",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-10",
+    title: "Pharma",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img11,
+    alt: "An image of Pharma",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-11",
+    title: "Rice",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
+    image: Img111,
+    alt: "An image of Rice",
+    products: [
+      {
+        id: "product-111",
+        title: "Broken Rice",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img222,
+        alt: "An image of Broken Rice",
+      },
+      {
+        id: "product-222",
+        title: "Brown Rice",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img333,
+        alt: "An image of Brown Rice",
+      },
+      {
+        id: "product-333",
+        title: "Parboiled Rice",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img444,
+        alt: "An image of Parboiled Rice",
+      },
+    ],
+  },
+  {
+    id: "category-12",
+    title: "Lentils & Cereals",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img22,
+    alt: "An image of Lentils & Cereals",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-13",
+    title: "Cocunut",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img22,
+    alt: "An image of Cocunut",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+    ],
+  },
+  {
+    id: "category-14",
+    title: "Cattle Feed",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
+    image: Img22,
+    alt: "An image of Cattle Feed",
+    products: [
+      {
+        id: "product-21",
+        title: "Lentils",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img22,
+        alt: "An image of Lentils",
+      },
+      {
+        id: "product-22",
+        title: "Refined Sugar",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img33,
+        alt: "An image of Refined Sugar",
+      },
+      {
+        id: "product-23",
+        title: "Cardamon",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: Img44,
+        alt: "An image of Cardamon",
       },
     ],
   },
@@ -349,7 +589,7 @@ function ProductCategories({ isHome }) {
             <div className="content">
               <h3>{category.title}</h3>
               <h4>({category.products.length} Products)</h4>
-              <p>{category.description}</p>
+              {/* <p>{category.description}</p> */}
             </div>
           </div>
 

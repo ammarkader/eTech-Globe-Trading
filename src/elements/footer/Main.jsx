@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "@/assets/img-logo.webp";
+import Logo from "@/assets/img-logo.png";
 import "@/styles/modules/footer/_footer_main.scss";
 
 function Main() {
@@ -61,13 +61,27 @@ function Main() {
               <p className="address">
                 <a
                   href="https://www.google.com/maps?q=Office+No.43-44+Dubai+Municipality+Bur+Dubai+Al+Fahidi"
-                  aria-label="View our office location on Google Maps"
+                  aria-label="View our main office location on Google Maps"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  ETECH Globe Trading Co LLC <br />
                   Office No.43-44, <br />
                   Dubai Municipality, Bur Dubai, <br />
-                  Al Fahidi
+                  Al Fahidi, Dubai
+                </a>
+              </p>
+              <p className="address">
+                <a
+                  href="https://www.google.com/maps?q=Office+No.43-44+Dubai+Municipality+Bur+Dubai+Al+Fahidi"
+                  aria-label="View our second office location on Google Maps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ETECH Globe FZCO <br />
+                  IFZA Business Park, DDP, <br />
+                  Building A1, Dubai Digital Park, <br />
+                  Dubai Silicon Oasis, Dubai
                 </a>
               </p>
               <p className="email">

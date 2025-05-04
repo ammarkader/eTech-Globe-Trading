@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import Logo from "@/assets/img-logo.webp";
+import Logo from "@/assets/img-logo.png";
 import "@/styles/modules/header/_header_navbar.scss";
 
 function Navbar({ show, onSetToggle }) {

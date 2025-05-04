@@ -12,9 +12,9 @@ function Layout() {
       <FeaturedImage image={FeaturedImg} alt="about-featured-image" />
       <Stats />
       <Intro />
+      <Team />
       <Partners />
       <CoreValues />
-      <Team />
     </>
   );
 }

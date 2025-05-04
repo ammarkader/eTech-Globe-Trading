@@ -66,13 +66,30 @@ function ContactForm() {
                 <a
                   href="#"
                   target="_blank"
-                  aria-label="View our office location on Google Maps"
+                  aria-label="View our main office location on Google Maps"
                   rel="noopener noreferrer"
                 >
+                  ETECH Globe Trading Co LLC <br />
                   Office No.43-44, <br />
                   Dubai Municipality, Bur Dubai,
                   <br />
-                  Al Fahidi
+                  Al Fahidi, Dubai
+                </a>
+              </p>
+            </div>
+            <div className="detail">
+              <h3>Address</h3>
+              <p>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="View our second office location on Google Maps"
+                  rel="noopener noreferrer"
+                >
+                  ETECH Globe FZCO <br />
+                  IFZA Business Park, DDP, <br />
+                  Building A1, Dubai Digital Park, <br />
+                  Dubai Silicon Oasis, Dubai
                 </a>
               </p>
             </div>

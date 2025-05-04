@@ -1,22 +1,14 @@
 .aboutpage-core-values__wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 160px;
-
-  @include respond-below(lg) {
-    padding-bottom: 150px;
-  }
+  padding-bottom: 50px;
 
   @include respond-below(md) {
-    padding-bottom: 130px;
-  }
-
-  @include respond-below(sm) {
-    padding-bottom: 110px;
+    padding-bottom: 30px;
   }
 
   @include respond-below(xs) {
-    padding-bottom: 90px;
+    padding-bottom: 30px;
   }
 
   .aboutpage-core-values__container {

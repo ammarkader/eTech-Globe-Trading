@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import gsap from "gsap";
-import Logo from "@/assets/img-logo.webp";
+import Logo from "@/assets/img-logo.png";
 import "@/styles/modules/header/_header_fullscreen_menu.scss";
 
 function FullScreenMenu({ show, onSetToggle }) {
@@ -127,7 +127,9 @@ function FullScreenMenu({ show, onSetToggle }) {
             <div className="content">
               <p className="address">
                 <a href="mailto:info@etechglobe.com" target="_blank">
-                  Office No.43-44 – Dubai Municipality, Bur Dubai – Al Fahidi
+                  ETECH Globe FZCO <br />
+                  IFZA Business Park, DDP, Building A1, Dubai Digital Park,
+                  Dubai Silicon Oasis, Dubai
                 </a>
               </p>
               <p className="email">
