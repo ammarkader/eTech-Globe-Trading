@@ -229,9 +229,6 @@
 
                     @include respond-below(sm) {
                       width: 100%;
-                    }
-
-                    @include respond-below(xs) {
                       height: auto;
                     }
 

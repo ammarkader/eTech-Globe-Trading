@@ -67,7 +67,6 @@ function CoreValues() {
             Backed by a global network of meticulously vetted suppliers and
             channel partners, our organization ensures that every product and
             service meets the highest standards of quality and reliability.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nulla!
           </p>
         </div>
         <div className="section-cards__container">

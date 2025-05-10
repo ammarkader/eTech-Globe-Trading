@@ -93,8 +93,19 @@ function Main() {
                 </a>
               </p>
               <p className="phone">
-                <a href="tel:1234567890" aria-label="Call us at 1234567890">
-                  1234567890
+                <a
+                  href="tel:+971504383543"
+                  aria-label="Call us at +971 50 4383543"
+                >
+                  +971 50 4383543
+                </a>
+              </p>
+              <p className="phone">
+                <a
+                  href="tel:+919962445641"
+                  aria-label="Call us at +91 9962445641"
+                >
+                  +91 9962445641
                 </a>
               </p>
             </div>
