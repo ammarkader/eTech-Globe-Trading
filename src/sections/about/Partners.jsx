@@ -2,7 +2,7 @@ import IMG1 from "@/assets/img-partners-1.png";
 import IMG2 from "@/assets/img-partners-2.png";
 import IMG3 from "@/assets/img-partners-3.png";
 import IMG4 from "@/assets/img-partners-4.png";
-import IMG5 from "@/assets/img-partners-5.png";
+// import IMG5 from "@/assets/img-partners-5.png";
 import IMG6 from "@/assets/img-partners-6.png";
 import "@/styles/pages/about/_aboutpage_partners.scss";
 
@@ -31,12 +31,12 @@ const partnersData = [
     alt: "logo of our partner",
     url: "",
   },
-  {
-    id: 5,
-    image: IMG5,
-    alt: "logo of our partner",
-    url: "",
-  },
+  // {
+  //   id: 5,
+  //   image: IMG5,
+  //   alt: "logo of our partner",
+  //   url: "",
+  // },
   {
     id: 6,
     image: IMG6,

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+
 import Img1 from "@/assets/img-oil-1.jpg";
 import Img2 from "@/assets/img-oil-2.jpg";
 import Img3 from "@/assets/img-oil-3.jpeg";
@@ -27,86 +28,19 @@ import Img333333 from "@/assets/img-minerals-3.jpg";
 import Img444444 from "@/assets/img-minerals-4.jpg";
 import Img555555 from "@/assets/img-minerals-5.jpg";
 import Img666666 from "@/assets/img-minerals-6.jpg";
+import IMGPHARMA1 from "@/assets/img-pharma-1.jpeg";
+import IMGPHARMA2 from "@/assets/img-pharma-2.png";
+import IMGPHARMA3 from "@/assets/img-pharma-3.png";
 
 const productsData = [
   {
     id: "category-1",
-    title: "Energy",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img11111,
-    alt: "An image of Energy",
-    products: [
-      {
-        id: "product-11111",
-        title: "Premium Wood Pellet",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img22222,
-        alt: "An image of Premium Wood Pellet",
-      },
-      {
-        id: "product-22222",
-        title: "LNG",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img33333,
-        alt: "An image of LNG",
-      },
-      {
-        id: "product-33333",
-        title: "EN59010PPM",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img44444,
-        alt: "An image of EN59010PPM",
-      },
-      {
-        id: "product-44444",
-        title: "A1 Jet Fuel",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img55555,
-        alt: "An image of A1 Jet Fuel",
-      },
-    ],
-  },
-  {
-    id: "category-2",
-    title: "Agriculture Fertilizers",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img1111,
-    alt: "An image of Agriculture Fertilizers",
-    products: [
-      {
-        id: "product-1111",
-        title: "Premium Cocopeat",
-        description:
-          "Our superior cocopeat offers exceptional water retention and aeration for optimal plant growth. Made from processed coconut husks, this sustainable growing medium features balanced pH, low EC levels, and superior root development properties.",
-        image: Img2222,
-        alt: "An image of Premium Cocopeat",
-      },
-      {
-        id: "product-2222",
-        title: "Sulphur",
-        description:
-          "Sulfur in different forms, shapes, sizes and quality parameters is generally used for manufacturing fertilisers, as bleaching agents, as Bi-sulfates, Carbon disulfides and Sulfites, as Granular Sulphur 99.95%.",
-        image: Img3333,
-        alt: "An image of Sulphur",
-      },
-    ],
-  },
-  {
-    id: "category-3",
     title: "Palm Oil & Bi Products",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
     image: Img555555,
     alt: "An image of Palm Oil & Bi Products",
     products: [
       {
-        id: "product-111111",
+        id: "product-cat-1",
         title: "Crude Palm Oil (CPO)",
         description:
           "Premium-grade crude palm oil sourced from sustainable plantations, offering superior quality with carefully monitored Free Fatty Acid (FFA) levels. Our CPO meets international quality standards with optimal moisture content and impurity levels, making it ideal for refineries and industrial processing.",
@@ -114,25 +48,63 @@ const productsData = [
         alt: "An image of Crude Palm Oil (CPO)",
       },
       {
-        id: "product-111111",
+        id: "product-cat-2",
         title: "RBD Palm Oil CP10 & CP8",
         description:
           "Refined, Bleached, and Deodorized (RBD) palm oil with Certified Cloud Point 10°C, featuring exceptional clarity and stability. Meticulously processed to ensure consistent quality, ideal for food manufacturing and industrial applications requiring specific cold temperature performance. Meets international food safety standards.",
         image: Img111111,
         alt: "An image of RBD Palm Oil CP10 & CP8",
       },
+      {
+        id: "product-cat-3",
+        title: "Additional Products",
+        description:
+          "In addition to our main offerings, we supply a range of value-added products such as Palm Stearin, PAO (Palm Acid Oil), PFAD (Palm Fatty Acid Distillate), and Palm Kernel Expellers. These versatile products cater to various industries, supporting applications in animal feed, oleochemicals, and food processing sectors.",
+        image: Img111111,
+        alt: "An image of Additional Products",
+      },
+    ],
+  },
+  {
+    id: "category-2",
+    title: "Energy",
+    image: Img11111,
+    alt: "An image of Energy",
+    products: [
+      {
+        id: "product-cat-2-1",
+        title: "Oil and Gas",
+        description:
+          "We offer specialized crude oil trading services with premium market access and execution excellence. Our solutions include seamless procurement, strategic price risk management, and optimized logistics. We supply LNG, EN590 10PPM, LPG, Jet Fuel A1, SAF, and D6 with flexible delivery terms including FOB and CIF across global markets.",
+        image: Img22222,
+        alt: "An image of Oil and Gas",
+      },
+    ],
+  },
+  {
+    id: "category-3",
+    title: "Biofuel",
+    image: Img11111,
+    alt: "An image of Biofuel",
+    products: [
+      {
+        id: "product-cat-3-1",
+        title: "Premium Wood Pellets - Indonesia",
+        description:
+          "Premium wooden pellets deliver high calorific value, consistent density, and minimal ash content—perfect for clean, efficient heating and industrial applications with renewable energy certification.",
+        image: Img22222,
+        alt: "An image of Premium Wood Pellets - Indonesia",
+      },
     ],
   },
   {
     id: "category-4",
     title: "Minerals",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
     image: Img555555,
     alt: "An image of Minerals",
     products: [
       {
-        id: "product-444444",
+        id: "product-cat-4-1",
         title: "Fe 62+ Iron Ore",
         description:
           "Our premium Fe 62+ iron ore offers superior iron content, minimal impurities, and consistent sizing, maximising yield while reducing costs for efficient blast furnace operations.",
@@ -140,7 +112,7 @@ const productsData = [
         alt: "An image of Fe 62+ Iron Ore",
       },
       {
-        id: "product-333333",
+        id: "product-cat-4-2",
         title: "Silica Sand",
         description:
           "Premium silica sand from our mines offers exceptional purity, consistent grain size, and low iron content—ideal for glass manufacturing, foundry work, and industrial applications worldwide.",
@@ -148,7 +120,7 @@ const productsData = [
         alt: "An image of Silica Sand",
       },
       {
-        id: "product-111111",
+        id: "product-cat-4-3",
         title: "Gypsum",
         description:
           "Export-grade gypsum from our mines provides high purity, consistent texture, and optimal setting properties—perfect for construction, agriculture, and industrial applications worldwide.",
@@ -156,7 +128,7 @@ const productsData = [
         alt: "An image of Gypsum",
       },
       {
-        id: "product-222222",
+        id: "product-cat-4-4",
         title: "Magnesium",
         description:
           "Our export-grade magnesium features exceptional purity, consistent quality, and versatile forms—perfect for aerospace, automotive, and alloy manufacturing applications requiring lightweight, high-strength materials.",
@@ -167,14 +139,84 @@ const productsData = [
   },
   {
     id: "category-5",
+    title: "Construction Materials",
+    image: Img11111,
+    alt: "An image of Construction Materials",
+    products: [
+      {
+        id: "product-cat-5-1",
+        title: "10mm & 20mm Aggregates",
+        description:
+          "Our premium crushed stone aggregates deliver exceptional performance for construction projects. 10mm aggregate offers superior compaction for driveways and concrete mixes, while 20mm provides robust foundation support and excellent drainage. Both sizes feature consistent grading, high durability, and meet stringent quality standards—ideal for commercial and residential applications.",
+        image: Img22222,
+        alt: "An image of 10mm & 20mm Aggregates",
+      },
+      {
+        id: "product-cat-5-2",
+        title: "Steel Bars - Reinforcement",
+        description:
+          "We export high-quality construction steel bars for reinforcement, manufactured to international standards such as ASTM A615. Our steel bars are ideal for infrastructure projects, ensuring strength, durability, and global compliance.",
+        image: Img33333,
+        alt: "An image of Steel Bars - Reinforcement",
+      },
+      {
+        id: "product-cat-5-3",
+        title: "Film-faced Laminated Plywood",
+        description:
+          "Film-faced laminated plywood, durable and water-resistant, ideal for concrete shuttering and construction. Smooth surface, high strength, export-quality finish, suitable for repeated use in harsh environments.",
+        image: Img44444,
+        alt: "An image of Film-faced Laminated Plywood",
+      },
+    ],
+  },
+  {
+    id: "category-6",
+    title: "Scarp",
+    image: Img1111,
+    alt: "An image of Scarp",
+    products: [
+      {
+        id: "product-cat-6-1",
+        title: "Scarp Materials",
+        description:
+          "We import and supply high-quality scrap materials, including HMS1, copper, aluminum, and more. Our dependable sourcing, competitive pricing, and global logistics ensure efficient supply to the recycling and manufacturing industries.",
+        image: Img2222,
+        alt: "An image of Scarp Materials",
+      },
+    ],
+  },
+  {
+    id: "category-7",
+    title: "Agriculture Fertilizers",
+    image: Img1111,
+    alt: "An image of Agriculture Fertilizers",
+    products: [
+      {
+        id: "product-cat-7-1",
+        title: "Premium Cocopeat",
+        description:
+          "Our superior cocopeat offers exceptional water retention and aeration for optimal plant growth. Made from processed coconut husks, this sustainable growing medium features balanced pH, low EC levels, and superior root development properties.",
+        image: Img2222,
+        alt: "An image of Premium Cocopeat",
+      },
+      {
+        id: "product-cat-7-2",
+        title: "Sulphur",
+        description:
+          "Sulfur in different forms, shapes, sizes and quality parameters is generally used for manufacturing fertilisers, as bleaching agents, as Bi-sulfates, Carbon disulfides and Sulfites, as Granular Sulphur 99.95%.",
+        image: Img3333,
+        alt: "An image of Sulphur",
+      },
+    ],
+  },
+  {
+    id: "category-8",
     title: "Edible Oils",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
     image: Img1,
     alt: "An image of Edible Oils",
     products: [
       {
-        id: "product-11",
+        id: "product-cat-8-1",
         title: "Soybean Oil",
         description:
           "Refined soybean oil, light and healthy, rich in essential fatty acids. Ideal for cooking and food processing. Export-grade, hygienically processed and securely packaged for shipment.",
@@ -182,7 +224,7 @@ const productsData = [
         alt: "An image of Soybean Oil",
       },
       {
-        id: "product-22",
+        id: "product-cat-8-2",
         title: "Coconut Oil",
         description:
           "Pure coconut oil, cold-pressed for maximum nutrients and rich aroma. Ideal for cooking, cosmetics, and wellness. Export-quality, securely packed to preserve freshness and quality",
@@ -190,7 +232,7 @@ const productsData = [
         alt: "An image of Coconut Oil",
       },
       {
-        id: "product-22",
+        id: "product-cat-8-3",
         title: "Avocado Oil",
         description:
           "High-quality avocado oil, cold-pressed for maximum nutrients and rich flavor. Ideal for cooking, skincare, and wellness. Export-grade, securely packed to maintain purity and freshness.",
@@ -198,7 +240,7 @@ const productsData = [
         alt: "An image of Avocado Oil",
       },
       {
-        id: "product-33",
+        id: "product-cat-8-4",
         title: "Groundnut Oil",
         description:
           "Premium groundnut oil, cold-pressed and rich in natural antioxidants. Ideal for cooking and frying. Export-quality, hygienically processed, securely packaged to ensure freshness and purity.",
@@ -208,193 +250,13 @@ const productsData = [
     ],
   },
   {
-    id: "category-6",
-    title: "Livestocks",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
-    image: Img1,
-    alt: "An image of Livestocks",
-    products: [
-      {
-        id: "product-11",
-        title: "Chicken – Brazilian",
-        description:
-          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
-        alt: "An image of whole Chicken – Brazilian",
-      },
-      {
-        id: "product-11",
-        title: "Beef",
-        description:
-          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
-        alt: "An image of Beef",
-      },
-      {
-        id: "product-11",
-        title: "Lamb",
-        description:
-          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
-        alt: "An image of Lamb",
-      },
-    ],
-  },
-  {
-    id: "category-7",
-    title: "Sugar",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img11,
-    alt: "An image of Sugar",
-    products: [
-      {
-        id: "product-21",
-        title: "ICUMSA 45",
-        description:
-          "Premium ICUMSA 45 sugar delivers exceptional purity, brilliant white crystals, and consistent grain size—meeting international quality standards for beverage production, confectionery, and pharmaceutical applications worldwide.",
-        image: Img22,
-        alt: "An image of ICUMSA 45",
-      },
-      {
-        id: "product-22",
-        title: "Indian Jaggery",
-        description:
-          "Our export-quality Indian jaggery features rich caramel flavor, natural golden hue, and traditional processing—delivering pure, unrefined sweetness with essential minerals for global health-conscious consumers.",
-        image: Img33,
-        alt: "An image of Indian Jaggery",
-      },
-      {
-        id: "product-23",
-        title: "S30",
-        description:
-          "S30 Sugar is premium-grade refined sugar, crystal white, ideal for food processing and beverages. Consistently high quality, hygienically packed, perfect for international export standards.",
-        image: Img44,
-        alt: "An image of S30",
-      },
-    ],
-  },
-  {
-    id: "category-8",
-    title: "Spices",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img11,
-    alt: "An image of Spices",
-    products: [
-      {
-        id: "product-21",
-        title: "Clove",
-        description:
-          "Premium quality cloves, sun-dried and hand-picked for purity. Rich aroma, high oil content, ideal for culinary and medicinal use. Export-ready with strict quality assurance.",
-        image: Img22,
-        alt: "An image of Clove",
-      },
-      {
-        id: "product-23",
-        title: "Cardamon",
-        description:
-          "Green cardamom pods, aromatic and flavorful, hand-harvested for superior quality. Ideal for culinary, tea, and medicinal use. Carefully packed, export-grade with rich essential oils.",
-        image: Img44,
-        alt: "An image of Cardamon",
-      },
-      {
-        id: "product-22",
-        title: "Red Chilli",
-        description:
-          "Premium red chillies, sun-dried for vibrant color and intense heat. Rich in flavor and aroma, hygienically packed, export-grade quality for culinary and industrial applications.",
-        image: Img33,
-        alt: "An image of Red Chilli",
-      },
-      {
-        id: "product-22",
-        title: "Cinamom",
-        description:
-          "High-quality cinnamon sticks, naturally dried for rich aroma and sweet-spicy flavor. Ideal for culinary, medicinal, and cosmetic use. Carefully packed, export-ready with strict quality control.",
-        image: Img33,
-        alt: "An image of Cinamom",
-      },
-    ],
-  },
-  {
     id: "category-9",
-    title: "Sea Foods",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img11,
-    alt: "An image of Sea Foods",
-    products: [
-      {
-        id: "product-21",
-        title: "TIN Fishes – Sardine",
-        description:
-          "High-quality tin fish (sardines), packed for freshness and flavor. Rich in nutrients and ideal for various cuisines. Export-ready, hygienically packed to meet international standards.",
-        image: Img22,
-        alt: "An image of TIN Fishes – Sardine",
-      },
-      {
-        id: "product-22",
-        title: "Tuna",
-        description:
-          "Premium tuna, carefully sourced and packed to preserve freshness and flavor. Rich in protein and omega-3, ideal for culinary uses. Export-ready, high-quality packaging.",
-        image: Img33,
-        alt: "An image of Tuna",
-      },
-      {
-        id: "product-23",
-        title: "Crabs",
-        description:
-          "Fresh, premium-quality crabs, harvested and packed to maintain natural flavor and texture. Ideal for culinary uses, rich in protein. Export-ready, hygienically packed for global markets.",
-        image: Img44,
-        alt: "An image of Crabs",
-      },
-      {
-        id: "product-23",
-        title: "Shrimps",
-        description:
-          "Premium shrimps, fresh and sustainably sourced, packed to preserve flavor and texture. Ideal for cooking and seafood dishes. Export-quality, hygienically processed and securely packaged.",
-        image: Img44,
-        alt: "An image of Shrimps",
-      },
-    ],
-  },
-  {
-    id: "category-10",
-    title: "Pharma",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img11,
-    alt: "An image of Pharma",
-    products: [
-      {
-        id: "product-21",
-        title: "Diaper",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img22,
-        alt: "An image of Diaper",
-      },
-      {
-        id: "product-22",
-        title: "Nitrile Gloves",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img33,
-        alt: "An image of Nitrile Gloves",
-      },
-    ],
-  },
-  {
-    id: "category-11",
     title: "Rice",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis.",
     image: Img111,
     alt: "An image of Rice",
     products: [
       {
-        id: "product-111",
+        id: "product-cat-9-1",
         title: "Broken Rice",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
@@ -402,7 +264,7 @@ const productsData = [
         alt: "An image of Broken Rice",
       },
       {
-        id: "product-222",
+        id: "product-cat-9-2",
         title: "Basmati Rice",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
@@ -410,7 +272,7 @@ const productsData = [
         alt: "An image of Basmati Rice",
       },
       {
-        id: "product-333",
+        id: "product-cat-9-3",
         title: "Parboiled Rice",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
@@ -418,7 +280,7 @@ const productsData = [
         alt: "An image of Parboiled Rice",
       },
       {
-        id: "product-333",
+        id: "product-cat-9-4",
         title: "Boiled Rice",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
@@ -428,15 +290,85 @@ const productsData = [
     ],
   },
   {
+    id: "category-10",
+    title: "Sugar",
+    image: Img11,
+    alt: "An image of Sugar",
+    products: [
+      {
+        id: "product-cat-10-1",
+        title: "ICUMSA 45",
+        description:
+          "Premium ICUMSA 45 sugar delivers exceptional purity, brilliant white crystals, and consistent grain size—meeting international quality standards for beverage production, confectionery, and pharmaceutical applications worldwide.",
+        image: Img22,
+        alt: "An image of ICUMSA 45",
+      },
+      {
+        id: "product-cat-10-2",
+        title: "Indian Jaggery",
+        description:
+          "Our export-quality Indian jaggery features rich caramel flavor, natural golden hue, and traditional processing—delivering pure, unrefined sweetness with essential minerals for global health-conscious consumers.",
+        image: Img33,
+        alt: "An image of Indian Jaggery",
+      },
+      {
+        id: "product-cat-10-3",
+        title: "S30",
+        description:
+          "S30 Sugar is premium-grade refined sugar, crystal white, ideal for food processing and beverages. Consistently high quality, hygienically packed, perfect for international export standards.",
+        image: Img44,
+        alt: "An image of S30",
+      },
+    ],
+  },
+  {
+    id: "category-11",
+    title: "Spices",
+    image: Img11,
+    alt: "An image of Spices",
+    products: [
+      {
+        id: "product-cat-11-1",
+        title: "Clove",
+        description:
+          "Premium quality cloves, sun-dried and hand-picked for purity. Rich aroma, high oil content, ideal for culinary and medicinal use. Export-ready with strict quality assurance.",
+        image: Img22,
+        alt: "An image of Clove",
+      },
+      {
+        id: "product-cat-11-2",
+        title: "Cardamon",
+        description:
+          "Green cardamom pods, aromatic and flavorful, hand-harvested for superior quality. Ideal for culinary, tea, and medicinal use. Carefully packed, export-grade with rich essential oils.",
+        image: Img44,
+        alt: "An image of Cardamon",
+      },
+      {
+        id: "product-cat-11-3",
+        title: "Cinamom",
+        description:
+          "High-quality cinnamon sticks, naturally dried for rich aroma and sweet-spicy flavor. Ideal for culinary, medicinal, and cosmetic use. Carefully packed, export-ready with strict quality control.",
+        image: Img33,
+        alt: "An image of Cinamom",
+      },
+      {
+        id: "product-cat-11-4",
+        title: "Red Chilli",
+        description:
+          "Premium red chillies, sun-dried for vibrant color and intense heat. Rich in flavor and aroma, hygienically packed, export-grade quality for culinary and industrial applications.",
+        image: Img33,
+        alt: "An image of Red Chilli",
+      },
+    ],
+  },
+  {
     id: "category-12",
     title: "Lentils & Cereals",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
     image: Img22,
     alt: "An image of Lentils & Cereals",
     products: [
       {
-        id: "product-21",
+        id: "product-cat-12-1",
         title: "Lentils",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
@@ -444,33 +376,111 @@ const productsData = [
         alt: "An image of Lentils",
       },
       {
-        id: "product-22",
-        title: "Refined Sugar",
+        id: "product-cat-12-2",
+        title: "Cereals",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
         image: Img33,
-        alt: "An image of Refined Sugar",
-      },
-      {
-        id: "product-23",
-        title: "Cardamon",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img44,
-        alt: "An image of Cardamon",
+        alt: "An image of Cereals",
       },
     ],
   },
   {
     id: "category-13",
+    title: "Livestocks",
+    image: Img1,
+    alt: "An image of Livestocks",
+    products: [
+      {
+        id: "product-cat-13-1",
+        title: "Chicken – Brazilian",
+        description:
+          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
+        image: Img2,
+        alt: "An image of whole Chicken – Brazilian",
+      },
+      {
+        id: "product-cat-13-2",
+        title: "Beef",
+        description:
+          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
+        image: Img2,
+        alt: "An image of Beef",
+      },
+      {
+        id: "product-cat-13-3",
+        title: "Lamb",
+        description:
+          "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
+        image: Img2,
+        alt: "An image of Lamb",
+      },
+    ],
+  },
+  {
+    id: "category-14",
+    title: "Sea Foods",
+    image: Img11,
+    alt: "An image of Sea Foods",
+    products: [
+      {
+        id: "product-cat-14-1",
+        title: "TIN Fishes – Sardine",
+        description:
+          "High-quality tin fish (sardines), packed for freshness and flavor. Rich in nutrients and ideal for various cuisines. Export-ready, hygienically packed to meet international standards.",
+        image: Img22,
+        alt: "An image of TIN Fishes – Sardine",
+      },
+      {
+        id: "product-cat-14-2",
+        title: "Tuna",
+        description:
+          "Premium tuna, carefully sourced and packed to preserve freshness and flavor. Rich in protein and omega-3, ideal for culinary uses. Export-ready, high-quality packaging.",
+        image: Img33,
+        alt: "An image of Tuna",
+      },
+      {
+        id: "product-cat-14-3",
+        title: "Crabs",
+        description:
+          "Fresh, premium-quality crabs, harvested and packed to maintain natural flavor and texture. Ideal for culinary uses, rich in protein. Export-ready, hygienically packed for global markets.",
+        image: Img44,
+        alt: "An image of Crabs",
+      },
+      {
+        id: "product-cat-14-4",
+        title: "Shrimps",
+        description:
+          "Premium shrimps, fresh and sustainably sourced, packed to preserve flavor and texture. Ideal for cooking and seafood dishes. Export-quality, hygienically processed and securely packaged.",
+        image: Img44,
+        alt: "An image of Shrimps",
+      },
+    ],
+  },
+  {
+    id: "category-15",
+    title: "Cattle Feed",
+    image: Img22,
+    alt: "An image of Cattle Feed",
+    products: [
+      {
+        id: "product-cat-15-1",
+        title: "Maize",
+        description:
+          "Premium export maize offers exceptional kernel quality, consistent moisture content, and high nutritional value—certified pest-free and sustainably grown for food production and animal feed worldwide.",
+        image: Img22,
+        alt: "An image of Maize",
+      },
+    ],
+  },
+  {
+    id: "category-16",
     title: "Cocunut",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
     image: Img22,
     alt: "An image of Cocunut",
     products: [
       {
-        id: "product-21",
+        id: "product-cat-16-1",
         title: "Matured Coconut",
         description:
           "The matured coconuts while de-husking, the husk is left intact over the “eyes” of the coconut.",
@@ -478,7 +488,7 @@ const productsData = [
         alt: "An image of Matured Coconut",
       },
       {
-        id: "product-22",
+        id: "product-cat-16-2",
         title: "Tender Coconut",
         description:
           "Our export-grade tender coconuts deliver perfectly sweet water, pristine white flesh, and extended freshness—harvested at optimal maturity for superior taste and nutritional value worldwide.",
@@ -488,20 +498,58 @@ const productsData = [
     ],
   },
   {
-    id: "category-14",
-    title: "Cattle Feed",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.",
-    image: Img22,
-    alt: "An image of Cattle Feed",
+    id: "category-17",
+    title: "Automobile",
+    image: Img11,
+    alt: "An image of Automobile",
     products: [
       {
-        id: "product-21",
-        title: "Maize",
+        id: "product-cat-17-1",
+        title: "Vehicles",
         description:
-          "Premium export maize offers exceptional kernel quality, consistent moisture content, and high nutritional value—certified pest-free and sustainably grown for food production and animal feed worldwide.",
+          "Our export-ready automobiles combine innovative engineering, fuel efficiency, and premium safety features—delivering reliable performance, modern styling, and competitive pricing for diverse global markets.",
         image: Img22,
-        alt: "An image of Maize",
+        alt: "An image of Vehicles",
+      },
+      {
+        id: "product-cat-17-2",
+        title: "Spare Parts",
+        description:
+          "Premium automotive spare parts offer original equipment quality, precise engineering, and comprehensive compatibility—ensuring optimal performance, extended durability, and reliable replacement solutions for international vehicle fleets.",
+        image: Img33,
+        alt: "An image of Spare Parts",
+      },
+      {
+        id: "product-cat-17-3",
+        title: "Lubricant oil",
+        description:
+          "High-quality lubricant oil for automobiles, enhancing engine performance and longevity. Ideal for all vehicle types. Export-ready, refined for superior viscosity and protection, securely packaged.",
+        image: Img33,
+        alt: "An image of Lubricant oil",
+      },
+    ],
+  },
+  {
+    id: "category-18",
+    title: "Pharma",
+    image: IMGPHARMA1,
+    alt: "An image of Pharma",
+    products: [
+      {
+        id: "product-cat-18-1",
+        title: "Diaper",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: IMGPHARMA2,
+        alt: "An image of Diaper",
+      },
+      {
+        id: "product-cat-18-2",
+        title: "Nitrile Gloves",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+        image: IMGPHARMA3,
+        alt: "An image of Nitrile Gloves",
       },
     ],
   },
@@ -605,7 +653,6 @@ function ProductCategories({ isHome }) {
             <div className="content">
               <h3>{category.title}</h3>
               <h4>({category.products.length} Products)</h4>
-              {/* <p>{category.description}</p> */}
             </div>
           </div>
 
