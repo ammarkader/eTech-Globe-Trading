@@ -409,7 +409,7 @@ const productsData = [
   {
     id: "category-13",
     title: "Livestocks",
-    image: IMGLIVESTOCK2,
+    image: IMGLIVESTOCK1,
     alt: "An image of Livestocks",
     products: [
       {
@@ -417,7 +417,7 @@ const productsData = [
         title: "Chicken – Brazilian",
         description:
           "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: IMGLIVESTOCK2,
+        image: IMGLIVESTOCK1,
         alt: "An image of whole Chicken – Brazilian",
       },
       {
@@ -433,7 +433,7 @@ const productsData = [
         title: "Lamb",
         description:
           "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
+        image: IMGLIVESTOCK2,
         alt: "An image of Lamb",
       },
     ],
