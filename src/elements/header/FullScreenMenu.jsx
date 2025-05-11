@@ -126,17 +126,39 @@ function FullScreenMenu({ show, onSetToggle }) {
           <div className="section-bottom__container">
             <div className="content">
               <p className="address">
-                <a href="mailto:info@etechglobe.com" target="_blank">
+                <a
+                  href="mailto:info@etechglobe.com"
+                  target="_blank"
+                  aria-label="View our office location on Google Maps"
+                >
                   ETECH Trading Globe FZCO <br />
                   IFZA Business Park, DDP, Building A1, Dubai Digital Park,
                   Dubai Silicon Oasis, Dubai
                 </a>
               </p>
               <p className="email">
-                <a href="mailto:info@etechglobe.com">info@etechglobe.com</a>
+                <a
+                  href="mailto:info@etechglobe.com"
+                  aria-label="Mail us at info@etechglobe.com"
+                >
+                  info@etechglobe.com
+                </a>
               </p>
               <p className="phone">
-                <a href="tel:1234567890"> 1234567890 </a>
+                <a
+                  href="tel:+971504383543"
+                  aria-label="Call us at +971 50 4383543"
+                >
+                  +971 50 4383543
+                </a>
+              </p>
+              <p className="phone">
+                <a
+                  href="tel:+919962445641"
+                  aria-label="Call us at +91 9962445641"
+                >
+                  +91 9962445641
+                </a>
               </p>
             </div>
           </div>

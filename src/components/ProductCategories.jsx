@@ -27,16 +27,38 @@ import Img222222 from "@/assets/img-minerals-2.jpeg";
 import Img333333 from "@/assets/img-minerals-3.jpg";
 import Img444444 from "@/assets/img-minerals-4.jpg";
 import Img555555 from "@/assets/img-minerals-5.jpg";
-import Img666666 from "@/assets/img-minerals-6.jpg";
+import ImgGYP from "@/assets/img-mineral-gyp.jpg";
+import IMGSCRAP from "@/assets/img-scrap.jpg";
 import IMGPHARMA1 from "@/assets/img-pharma-1.jpeg";
 import IMGPHARMA2 from "@/assets/img-pharma-2.png";
 import IMGPHARMA3 from "@/assets/img-pharma-3.png";
+import IMGSEA1 from "@/assets/img-sea-1.jpeg";
+import IMGSEA3 from "@/assets/img-sea-3.jpeg";
+import IMGSEA4 from "@/assets/img-sea-4.jpg";
+import IMGCATTLE from "@/assets/img-cattle-feed-1.jpg";
+import IMGLIVESTOCK1 from "@/assets/img-liveStock-1.jpeg";
+import IMGLIVESTOCK2 from "@/assets/img-liveStock-2.jpeg";
+import IMGPALM2 from "@/assets/img-palm-oil-2.jpg";
+import IMGPALM3 from "@/assets/img-palm-3.png";
+import IMGCONSTRUCTION1 from "@/assets/img-construction-1.jpg";
+import IMGCONSTRUCTION2 from "@/assets/img-construction-2.jpg";
+import IMGCONSTRUCTION3 from "@/assets/img-construction-3.png";
+import IMGCONSTRUCTION4 from "@/assets/img-construction-4.jpg";
+import IMGSOYOIL from "@/assets/img-soy-oil.jpeg";
+import IMGGROUNDOIL from "@/assets/img-grountnut-oil.jpg";
+import IMGSUGARMAIN from "@/assets/img-sugar-main.png";
+import IMGSUGARS30 from "@/assets/img-sugar-s30.jpg";
+import IMGSUGARICU from "@/assets/img-sugar-icu.jpg";
+import IMGSUGARINDIAN from "@/assets/img-sugar-indian.jpg";
+import IMGCOCONUT from "@/assets/img-coconut.jpg";
+import IMGCARS from "@/assets/img-auto-cars.jpg";
+import IMGSPARES from "@/assets/img-auto-spare.jpg";
 
 const productsData = [
   {
     id: "category-1",
     title: "Palm Oil & Bi Products",
-    image: Img555555,
+    image: IMGPALM2,
     alt: "An image of Palm Oil & Bi Products",
     products: [
       {
@@ -44,7 +66,7 @@ const productsData = [
         title: "Crude Palm Oil (CPO)",
         description:
           "Premium-grade crude palm oil sourced from sustainable plantations, offering superior quality with carefully monitored Free Fatty Acid (FFA) levels. Our CPO meets international quality standards with optimal moisture content and impurity levels, making it ideal for refineries and industrial processing.",
-        image: Img111111,
+        image: Img1,
         alt: "An image of Crude Palm Oil (CPO)",
       },
       {
@@ -52,7 +74,7 @@ const productsData = [
         title: "RBD Palm Oil CP10 & CP8",
         description:
           "Refined, Bleached, and Deodorized (RBD) palm oil with Certified Cloud Point 10°C, featuring exceptional clarity and stability. Meticulously processed to ensure consistent quality, ideal for food manufacturing and industrial applications requiring specific cold temperature performance. Meets international food safety standards.",
-        image: Img111111,
+        image: IMGPALM2,
         alt: "An image of RBD Palm Oil CP10 & CP8",
       },
       {
@@ -60,7 +82,7 @@ const productsData = [
         title: "Additional Products",
         description:
           "In addition to our main offerings, we supply a range of value-added products such as Palm Stearin, PAO (Palm Acid Oil), PFAD (Palm Fatty Acid Distillate), and Palm Kernel Expellers. These versatile products cater to various industries, supporting applications in animal feed, oleochemicals, and food processing sectors.",
-        image: Img111111,
+        image: IMGPALM3,
         alt: "An image of Additional Products",
       },
     ],
@@ -76,7 +98,7 @@ const productsData = [
         title: "Oil and Gas",
         description:
           "We offer specialized crude oil trading services with premium market access and execution excellence. Our solutions include seamless procurement, strategic price risk management, and optimized logistics. We supply LNG, EN590 10PPM, LPG, Jet Fuel A1, SAF, and D6 with flexible delivery terms including FOB and CIF across global markets.",
-        image: Img22222,
+        image: Img33333,
         alt: "An image of Oil and Gas",
       },
     ],
@@ -84,7 +106,7 @@ const productsData = [
   {
     id: "category-3",
     title: "Biofuel",
-    image: Img11111,
+    image: Img22222,
     alt: "An image of Biofuel",
     products: [
       {
@@ -124,7 +146,7 @@ const productsData = [
         title: "Gypsum",
         description:
           "Export-grade gypsum from our mines provides high purity, consistent texture, and optimal setting properties—perfect for construction, agriculture, and industrial applications worldwide.",
-        image: Img111111,
+        image: ImgGYP,
         alt: "An image of Gypsum",
       },
       {
@@ -140,7 +162,7 @@ const productsData = [
   {
     id: "category-5",
     title: "Construction Materials",
-    image: Img11111,
+    image: IMGCONSTRUCTION1,
     alt: "An image of Construction Materials",
     products: [
       {
@@ -148,7 +170,7 @@ const productsData = [
         title: "10mm & 20mm Aggregates",
         description:
           "Our premium crushed stone aggregates deliver exceptional performance for construction projects. 10mm aggregate offers superior compaction for driveways and concrete mixes, while 20mm provides robust foundation support and excellent drainage. Both sizes feature consistent grading, high durability, and meet stringent quality standards—ideal for commercial and residential applications.",
-        image: Img22222,
+        image: IMGCONSTRUCTION1,
         alt: "An image of 10mm & 20mm Aggregates",
       },
       {
@@ -156,7 +178,7 @@ const productsData = [
         title: "Steel Bars - Reinforcement",
         description:
           "We export high-quality construction steel bars for reinforcement, manufactured to international standards such as ASTM A615. Our steel bars are ideal for infrastructure projects, ensuring strength, durability, and global compliance.",
-        image: Img33333,
+        image: IMGCONSTRUCTION3,
         alt: "An image of Steel Bars - Reinforcement",
       },
       {
@@ -164,7 +186,7 @@ const productsData = [
         title: "Film-faced Laminated Plywood",
         description:
           "Film-faced laminated plywood, durable and water-resistant, ideal for concrete shuttering and construction. Smooth surface, high strength, export-quality finish, suitable for repeated use in harsh environments.",
-        image: Img44444,
+        image: IMGCONSTRUCTION4,
         alt: "An image of Film-faced Laminated Plywood",
       },
     ],
@@ -172,7 +194,7 @@ const productsData = [
   {
     id: "category-6",
     title: "Scarp",
-    image: Img1111,
+    image: IMGSCRAP,
     alt: "An image of Scarp",
     products: [
       {
@@ -180,7 +202,7 @@ const productsData = [
         title: "Scarp Materials",
         description:
           "We import and supply high-quality scrap materials, including HMS1, copper, aluminum, and more. Our dependable sourcing, competitive pricing, and global logistics ensure efficient supply to the recycling and manufacturing industries.",
-        image: Img2222,
+        image: IMGSCRAP,
         alt: "An image of Scarp Materials",
       },
     ],
@@ -220,7 +242,7 @@ const productsData = [
         title: "Soybean Oil",
         description:
           "Refined soybean oil, light and healthy, rich in essential fatty acids. Ideal for cooking and food processing. Export-grade, hygienically processed and securely packaged for shipment.",
-        image: Img2,
+        image: IMGSOYOIL,
         alt: "An image of Soybean Oil",
       },
       {
@@ -244,7 +266,7 @@ const productsData = [
         title: "Groundnut Oil",
         description:
           "Premium groundnut oil, cold-pressed and rich in natural antioxidants. Ideal for cooking and frying. Export-quality, hygienically processed, securely packaged to ensure freshness and purity.",
-        image: Img4,
+        image: IMGGROUNDOIL,
         alt: "An image of Groundnut Oil",
       },
     ],
@@ -268,7 +290,7 @@ const productsData = [
         title: "Basmati Rice",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img333,
+        image: Img111,
         alt: "An image of Basmati Rice",
       },
       {
@@ -292,7 +314,7 @@ const productsData = [
   {
     id: "category-10",
     title: "Sugar",
-    image: Img11,
+    image: IMGSUGARMAIN,
     alt: "An image of Sugar",
     products: [
       {
@@ -300,7 +322,7 @@ const productsData = [
         title: "ICUMSA 45",
         description:
           "Premium ICUMSA 45 sugar delivers exceptional purity, brilliant white crystals, and consistent grain size—meeting international quality standards for beverage production, confectionery, and pharmaceutical applications worldwide.",
-        image: Img22,
+        image: IMGSUGARMAIN,
         alt: "An image of ICUMSA 45",
       },
       {
@@ -308,7 +330,7 @@ const productsData = [
         title: "Indian Jaggery",
         description:
           "Our export-quality Indian jaggery features rich caramel flavor, natural golden hue, and traditional processing—delivering pure, unrefined sweetness with essential minerals for global health-conscious consumers.",
-        image: Img33,
+        image: IMGSUGARINDIAN,
         alt: "An image of Indian Jaggery",
       },
       {
@@ -316,7 +338,7 @@ const productsData = [
         title: "S30",
         description:
           "S30 Sugar is premium-grade refined sugar, crystal white, ideal for food processing and beverages. Consistently high quality, hygienically packed, perfect for international export standards.",
-        image: Img44,
+        image: IMGSUGARS30,
         alt: "An image of S30",
       },
     ],
@@ -356,7 +378,7 @@ const productsData = [
         title: "Red Chilli",
         description:
           "Premium red chillies, sun-dried for vibrant color and intense heat. Rich in flavor and aroma, hygienically packed, export-grade quality for culinary and industrial applications.",
-        image: Img33,
+        image: Img11,
         alt: "An image of Red Chilli",
       },
     ],
@@ -388,7 +410,7 @@ const productsData = [
   {
     id: "category-13",
     title: "Livestocks",
-    image: Img1,
+    image: IMGLIVESTOCK1,
     alt: "An image of Livestocks",
     products: [
       {
@@ -396,7 +418,7 @@ const productsData = [
         title: "Chicken – Brazilian",
         description:
           "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
+        image: IMGLIVESTOCK1,
         alt: "An image of whole Chicken – Brazilian",
       },
       {
@@ -404,7 +426,7 @@ const productsData = [
         title: "Beef",
         description:
           "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: Img2,
+        image: IMGLIVESTOCK2,
         alt: "An image of Beef",
       },
       {
@@ -420,7 +442,7 @@ const productsData = [
   {
     id: "category-14",
     title: "Sea Foods",
-    image: Img11,
+    image: IMGSEA1,
     alt: "An image of Sea Foods",
     products: [
       {
@@ -428,7 +450,7 @@ const productsData = [
         title: "TIN Fishes – Sardine",
         description:
           "High-quality tin fish (sardines), packed for freshness and flavor. Rich in nutrients and ideal for various cuisines. Export-ready, hygienically packed to meet international standards.",
-        image: Img22,
+        image: IMGSEA1,
         alt: "An image of TIN Fishes – Sardine",
       },
       {
@@ -436,7 +458,7 @@ const productsData = [
         title: "Tuna",
         description:
           "Premium tuna, carefully sourced and packed to preserve freshness and flavor. Rich in protein and omega-3, ideal for culinary uses. Export-ready, high-quality packaging.",
-        image: Img33,
+        image: IMGSEA1,
         alt: "An image of Tuna",
       },
       {
@@ -444,7 +466,7 @@ const productsData = [
         title: "Crabs",
         description:
           "Fresh, premium-quality crabs, harvested and packed to maintain natural flavor and texture. Ideal for culinary uses, rich in protein. Export-ready, hygienically packed for global markets.",
-        image: Img44,
+        image: IMGSEA4,
         alt: "An image of Crabs",
       },
       {
@@ -452,7 +474,7 @@ const productsData = [
         title: "Shrimps",
         description:
           "Premium shrimps, fresh and sustainably sourced, packed to preserve flavor and texture. Ideal for cooking and seafood dishes. Export-quality, hygienically processed and securely packaged.",
-        image: Img44,
+        image: IMGSEA3,
         alt: "An image of Shrimps",
       },
     ],
@@ -460,7 +482,7 @@ const productsData = [
   {
     id: "category-15",
     title: "Cattle Feed",
-    image: Img22,
+    image: IMGCATTLE,
     alt: "An image of Cattle Feed",
     products: [
       {
@@ -468,7 +490,7 @@ const productsData = [
         title: "Maize",
         description:
           "Premium export maize offers exceptional kernel quality, consistent moisture content, and high nutritional value—certified pest-free and sustainably grown for food production and animal feed worldwide.",
-        image: Img22,
+        image: IMGCATTLE,
         alt: "An image of Maize",
       },
     ],
@@ -476,7 +498,7 @@ const productsData = [
   {
     id: "category-16",
     title: "Cocunut",
-    image: Img22,
+    image: IMGCOCONUT,
     alt: "An image of Cocunut",
     products: [
       {
@@ -484,7 +506,7 @@ const productsData = [
         title: "Matured Coconut",
         description:
           "The matured coconuts while de-husking, the husk is left intact over the “eyes” of the coconut.",
-        image: Img22,
+        image: IMGCOCONUT,
         alt: "An image of Matured Coconut",
       },
       {
@@ -492,7 +514,7 @@ const productsData = [
         title: "Tender Coconut",
         description:
           "Our export-grade tender coconuts deliver perfectly sweet water, pristine white flesh, and extended freshness—harvested at optimal maturity for superior taste and nutritional value worldwide.",
-        image: Img33,
+        image: IMGCOCONUT,
         alt: "An image of Tender Coconut",
       },
     ],
@@ -500,7 +522,7 @@ const productsData = [
   {
     id: "category-17",
     title: "Automobile",
-    image: Img11,
+    image: IMGCARS,
     alt: "An image of Automobile",
     products: [
       {
@@ -508,7 +530,7 @@ const productsData = [
         title: "Vehicles",
         description:
           "Our export-ready automobiles combine innovative engineering, fuel efficiency, and premium safety features—delivering reliable performance, modern styling, and competitive pricing for diverse global markets.",
-        image: Img22,
+        image: IMGCARS,
         alt: "An image of Vehicles",
       },
       {
@@ -516,7 +538,7 @@ const productsData = [
         title: "Spare Parts",
         description:
           "Premium automotive spare parts offer original equipment quality, precise engineering, and comprehensive compatibility—ensuring optimal performance, extended durability, and reliable replacement solutions for international vehicle fleets.",
-        image: Img33,
+        image: IMGSPARES,
         alt: "An image of Spare Parts",
       },
       {
@@ -524,7 +546,7 @@ const productsData = [
         title: "Lubricant oil",
         description:
           "High-quality lubricant oil for automobiles, enhancing engine performance and longevity. Ideal for all vehicle types. Export-ready, refined for superior viscosity and protection, securely packaged.",
-        image: Img33,
+        image: IMGSPARES,
         alt: "An image of Lubricant oil",
       },
     ],
@@ -636,7 +658,7 @@ function ProductCategories({ isHome }) {
   }, [activePopup]);
 
   const productsCategoriesData = isHome
-    ? productsData.slice(0, 3)
+    ? [productsData[0], productsData[1], productsData[3]]
     : productsData;
 
   return (
