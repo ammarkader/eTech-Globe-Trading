@@ -48,7 +48,6 @@ import IMGSOYOIL from "@/assets/img-soy-oil.jpeg";
 import IMGGROUNDOIL from "@/assets/img-grountnut-oil.jpg";
 import IMGSUGARMAIN from "@/assets/img-sugar-main.png";
 import IMGSUGARS30 from "@/assets/img-sugar-s30.jpg";
-import IMGSUGARICU from "@/assets/img-sugar-icu.jpg";
 import IMGSUGARINDIAN from "@/assets/img-sugar-indian.jpg";
 import IMGCOCONUT from "@/assets/img-coconut.jpg";
 import IMGCARS from "@/assets/img-auto-cars.jpg";
