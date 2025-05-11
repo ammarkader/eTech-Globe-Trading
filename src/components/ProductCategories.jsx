@@ -36,7 +36,7 @@ import IMGSEA1 from "@/assets/img-sea-1.jpeg";
 import IMGSEA3 from "@/assets/img-sea-3.jpeg";
 import IMGSEA4 from "@/assets/img-sea-4.jpg";
 import IMGCATTLE from "@/assets/img-cattle-feed-1.jpg";
-import IMGLIVESTOCK1 from "@/assets/img-liveStock-1.jpeg";
+// import IMGLIVESTOCK1 from "@/assets/img-liveStock-1.jpeg";
 import IMGLIVESTOCK2 from "@/assets/img-liveStock-2.jpeg";
 import IMGPALM2 from "@/assets/img-palm-oil-2.jpg";
 import IMGPALM3 from "@/assets/img-palm-3.png";
@@ -410,7 +410,7 @@ const productsData = [
   {
     id: "category-13",
     title: "Livestocks",
-    image: IMGLIVESTOCK1,
+    image: IMGLIVESTOCK2,
     alt: "An image of Livestocks",
     products: [
       {
@@ -418,7 +418,7 @@ const productsData = [
         title: "Chicken – Brazilian",
         description:
           "We export high-quality Brazilian whole chickens, midjoints, and paws, sourced from trusted farms. These protein-rich products are carefully processed to meet international standards, ensuring freshness and superior flavor. Perfect for culinary use and food industries, our products are securely packaged, maintaining optimal quality for global markets and customer satisfaction.",
-        image: IMGLIVESTOCK1,
+        image: IMGLIVESTOCK2,
         alt: "An image of whole Chicken – Brazilian",
       },
       {
