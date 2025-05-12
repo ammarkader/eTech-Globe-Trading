@@ -392,25 +392,17 @@ const productsData = [
   },
   {
     id: "category-12",
-    title: "Lentils & Cereals",
+    title: "Lentils, Cereals & Dals",
     image: Img22,
     alt: "An image of Lentils & Cereals",
     products: [
       {
         id: "product-cat-12-1",
-        title: "Lentils",
+        title: "Lentils, Cereals & Dals",
         description:
           "We export premium-quality lentils, cereals, and dals, delivering freshness and nutrition worldwide. Committed to global standards, we ensure consistent supply, competitive pricing, and excellence in every shipment.",
         image: Img22,
-        alt: "An image of Lentils",
-      },
-      {
-        id: "product-cat-12-2",
-        title: "Cereals",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
-        image: Img33,
-        alt: "An image of Cereals",
+        alt: "An image of Lentils, Cereals & Dals",
       },
     ],
   },
