@@ -27,12 +27,14 @@ import Img222222 from "@/assets/img-minerals-2.jpeg";
 import Img333333 from "@/assets/img-minerals-3.jpg";
 import Img444444 from "@/assets/img-minerals-4.jpg";
 import Img555555 from "@/assets/img-minerals-5.jpg";
+import IMGMAG from "@/assets/img-manganese.jpg";
 import ImgGYP from "@/assets/img-mineral-gyp.jpg";
 import IMGSCRAP from "@/assets/img-scrap.jpg";
 import IMGPHARMA1 from "@/assets/img-pharma-1.jpeg";
 import IMGPHARMA2 from "@/assets/img-pharma-2.png";
 import IMGPHARMA3 from "@/assets/img-pharma-3.png";
 import IMGSEA1 from "@/assets/img-sea-1.jpeg";
+import IMGSEA2 from "@/assets/img-sea-2.jpeg";
 import IMGSEA3 from "@/assets/img-sea-3.jpeg";
 import IMGSEA4 from "@/assets/img-sea-4.jpg";
 import IMGCATTLE from "@/assets/img-cattle-feed-1.jpg";
@@ -45,13 +47,19 @@ import IMGCONSTRUCTION2 from "@/assets/img-construction-2.jpg";
 import IMGCONSTRUCTION3 from "@/assets/img-construction-3.png";
 import IMGCONSTRUCTION4 from "@/assets/img-construction-4.jpg";
 import IMGSOYOIL from "@/assets/img-soy-oil.jpeg";
-import IMGGROUNDOIL from "@/assets/img-grountnut-oil.jpg";
+import IMGGROUNDOIL from "@/assets/img-oil-4.jpg";
+import IMGCOCONUTOIL from "@/assets/img-oil-3.jpeg";
+import IMGAVOCADOOIL from "@/assets/img-avocado-oil.jpg";
 import IMGSUGARMAIN from "@/assets/img-sugar-main.png";
 import IMGSUGARS30 from "@/assets/img-sugar-s30.jpg";
 import IMGSUGARINDIAN from "@/assets/img-sugar-indian.jpg";
-import IMGCOCONUT from "@/assets/img-coconut.jpg";
+import IMGCOCONUT1 from "@/assets/img-coconut-2.jpg";
+import IMGCOCONUT2 from "@/assets/img-coconut.jpg";
 import IMGCARS from "@/assets/img-auto-cars.jpg";
 import IMGSPARES from "@/assets/img-auto-spare.jpg";
+import IMGOIL from "@/assets/img-auto-oil.jpeg";
+import IMGCLOVE from "@/assets/img-spices-clove.jpeg";
+import IMGCINNAMON from "@/assets/img-spice-cinnamon.jpeg";
 
 const productsData = [
   {
@@ -150,11 +158,11 @@ const productsData = [
       },
       {
         id: "product-cat-4-4",
-        title: "Magnesium",
+        title: "Manganese",
         description:
-          "Our export-grade magnesium features exceptional purity, consistent quality, and versatile forms—perfect for aerospace, automotive, and alloy manufacturing applications requiring lightweight, high-strength materials.",
-        image: Img222222,
-        alt: "An image of Magnesium",
+          "Our export-grade manganese features exceptional purity, consistent quality, and versatile forms—perfect for aerospace, automotive, and alloy manufacturing applications requiring lightweight, high-strength materials.",
+        image: IMGMAG,
+        alt: "An image of Manganese",
       },
     ],
   },
@@ -233,7 +241,7 @@ const productsData = [
   {
     id: "category-8",
     title: "Edible Oils",
-    image: Img1,
+    image: IMGGROUNDOIL,
     alt: "An image of Edible Oils",
     products: [
       {
@@ -249,7 +257,7 @@ const productsData = [
         title: "Coconut Oil",
         description:
           "Pure coconut oil, cold-pressed for maximum nutrients and rich aroma. Ideal for cooking, cosmetics, and wellness. Export-quality, securely packed to preserve freshness and quality",
-        image: Img3,
+        image: IMGCOCONUTOIL,
         alt: "An image of Coconut Oil",
       },
       {
@@ -257,7 +265,7 @@ const productsData = [
         title: "Avocado Oil",
         description:
           "High-quality avocado oil, cold-pressed for maximum nutrients and rich flavor. Ideal for cooking, skincare, and wellness. Export-grade, securely packed to maintain purity and freshness.",
-        image: Img3,
+        image: IMGAVOCADOOIL,
         alt: "An image of Avocado Oil",
       },
       {
@@ -353,7 +361,7 @@ const productsData = [
         title: "Clove",
         description:
           "Premium quality cloves, sun-dried and hand-picked for purity. Rich aroma, high oil content, ideal for culinary and medicinal use. Export-ready with strict quality assurance.",
-        image: Img22,
+        image: IMGCLOVE,
         alt: "An image of Clove",
       },
       {
@@ -366,11 +374,11 @@ const productsData = [
       },
       {
         id: "product-cat-11-3",
-        title: "Cinamom",
+        title: "Cinnamon",
         description:
           "High-quality cinnamon sticks, naturally dried for rich aroma and sweet-spicy flavor. Ideal for culinary, medicinal, and cosmetic use. Carefully packed, export-ready with strict quality control.",
-        image: Img33,
-        alt: "An image of Cinamom",
+        image: IMGCINNAMON,
+        alt: "An image of Cinnamon",
       },
       {
         id: "product-cat-11-4",
@@ -392,7 +400,7 @@ const productsData = [
         id: "product-cat-12-1",
         title: "Lentils",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nulla blanditiis nobis perspiciatis nihil voluptates consectetur deleniti iusto modi corporis?",
+          "We export premium-quality lentils, cereals, and dals, delivering freshness and nutrition worldwide. Committed to global standards, we ensure consistent supply, competitive pricing, and excellence in every shipment.",
         image: Img22,
         alt: "An image of Lentils",
       },
@@ -457,7 +465,7 @@ const productsData = [
         title: "Tuna",
         description:
           "Premium tuna, carefully sourced and packed to preserve freshness and flavor. Rich in protein and omega-3, ideal for culinary uses. Export-ready, high-quality packaging.",
-        image: IMGSEA1,
+        image: IMGSEA2,
         alt: "An image of Tuna",
       },
       {
@@ -497,7 +505,7 @@ const productsData = [
   {
     id: "category-16",
     title: "Cocunut",
-    image: IMGCOCONUT,
+    image: IMGCOCONUT1,
     alt: "An image of Cocunut",
     products: [
       {
@@ -505,7 +513,7 @@ const productsData = [
         title: "Matured Coconut",
         description:
           "The matured coconuts while de-husking, the husk is left intact over the “eyes” of the coconut.",
-        image: IMGCOCONUT,
+        image: IMGCOCONUT1,
         alt: "An image of Matured Coconut",
       },
       {
@@ -513,7 +521,7 @@ const productsData = [
         title: "Tender Coconut",
         description:
           "Our export-grade tender coconuts deliver perfectly sweet water, pristine white flesh, and extended freshness—harvested at optimal maturity for superior taste and nutritional value worldwide.",
-        image: IMGCOCONUT,
+        image: IMGCOCONUT2,
         alt: "An image of Tender Coconut",
       },
     ],
@@ -545,7 +553,7 @@ const productsData = [
         title: "Lubricant oil",
         description:
           "High-quality lubricant oil for automobiles, enhancing engine performance and longevity. Ideal for all vehicle types. Export-ready, refined for superior viscosity and protection, securely packaged.",
-        image: IMGSPARES,
+        image: IMGOIL,
         alt: "An image of Lubricant oil",
       },
     ],
