@@ -64,9 +64,14 @@ function CoreValues() {
         <div className="section-heading__container">
           <h2>Core Values</h2>
           <p>
-            Backed by a global network of meticulously vetted suppliers and
-            channel partners, our organization ensures that every product and
-            service meets the highest standards of quality and reliability.
+            We are committed to fostering strategic collaboration, upholding
+            fair pricing, and adhering to the highest ethical standards in all
+            our operations. By directly sourcing and controlling key material
+            channels, we provide reliable, value-driven solutions. Our global
+            footprint ensures accountability and timely delivery. With expertise
+            spanning multiple industries, we leverage diverse professional
+            backgrounds to effectively address the evolving needs of our clients
+            with precision and strategic insight.
           </p>
         </div>
         <div className="section-cards__container">

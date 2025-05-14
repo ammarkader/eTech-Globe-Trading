@@ -13,7 +13,7 @@ const aboutHeaderSEO = {
 const aboutHeroContent = {
   title: "Pioneering Innovation in Energy and Commodity Trading",
   description:
-    "We bridge global markets through innovative energy and commodity trading solutions, empowering businesses to thrive in a dynamic world.",
+    "We combine industry insight, technological advancement, and entrepreneurial drive to lead the way in cross-border commerce and beyond.",
 };
 const isAbout = {
   events: true,

@@ -1,4 +1,5 @@
 import EventLogo from "@/assets/img-event-1.png";
+import EventLogo2 from "@/assets/img-event-3.png";
 import "@/styles/modules/footer/_footer_events.scss";
 
 function Events() {
@@ -41,20 +42,20 @@ function Events() {
 
           <article className="event-card" aria-labelledby="event-2-name">
             <div className="image">
-              <img src={EventLogo} alt="Event Image" />
+              <img src={EventLogo2} alt="Event Image" />
             </div>
             <div className="content">
               <div className="name" id="event-2-name">
                 <h3>Event Name:</h3>
-                <p>Middle East Energy</p>
+                <p>Gulf Food</p>
               </div>
               <div className="location">
                 <h3>Event Location:</h3>
-                <p>Business Bay, Dubai</p>
+                <p>Dubai world centre + Dubai expo city</p>
               </div>
               <div className="date">
                 <h3>Event Date:</h3>
-                <p>April 7-9, 2025</p>
+                <p>26 - 30 Jan 2026</p>
               </div>
             </div>
           </article>

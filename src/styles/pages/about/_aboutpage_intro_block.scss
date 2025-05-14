@@ -75,7 +75,7 @@
       @include respond-below(md) {
         order: 1;
         min-height: 0;
-        height: 60vh;
+        height: auto;
       }
 
       .image {

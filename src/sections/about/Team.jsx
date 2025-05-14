@@ -53,7 +53,7 @@ const teamData = [
   {
     id: 7,
     name: "Lee",
-    designation: "Marketing Head, South korea",
+    designation: "Marketing Director, South korea",
     image: IMG7,
     alt: "An image of Lee",
   },
@@ -66,8 +66,11 @@ function Team() {
         <div className="section-heading__container">
           <h2>Key People</h2>
           <p>
-            Meet the leaders behind our success. With decades of industry
-            experience, they guide our company with expertise and vision.
+            ETECH brings together a dynamic team with proven track records in
+            real estate development, information technology, game development,
+            fintech, international trading, and finance. United under the ETECH
+            brand, our experts collaborate across continents to build a vibrant,
+            innovation-driven environment.
           </p>
         </div>
         <div className="team-members__container">

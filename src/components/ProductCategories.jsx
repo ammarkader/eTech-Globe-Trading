@@ -657,7 +657,7 @@ function ProductCategories({ isHome }) {
   }, [activePopup]);
 
   const productsCategoriesData = isHome
-    ? [productsData[0], productsData[1], productsData[3]]
+    ? [productsData[0], productsData[3], productsData[2]]
     : productsData;
 
   return (

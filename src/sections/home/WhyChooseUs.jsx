@@ -46,10 +46,11 @@ function WhyChooseUs() {
         <div className="section-heading__container">
           <h2>Why Choose Us?</h2>
           <p>
-            With decades of experience and a global network of trusted partners,
-            we deliver high-quality products and innovative solutions. Our
-            commitment to excellence ensures tailored, reliable results that
-            drive your business forward.
+            In alignment with our commitment to innovation and sustainability,
+            we expanded into recycling through ETECH Recyclers, operating scrap
+            yards that support circular economy goals. Our global reach also
+            extends into real estate, with international joint ventures in Saudi
+            Arabia reflecting our strategic versatility.
           </p>
         </div>
         <div className="section-cards__container">

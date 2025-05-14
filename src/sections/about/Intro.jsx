@@ -8,16 +8,19 @@ function Intro() {
         <div className="section-left__container">
           <h2>The Company</h2>
           <p>
-            We are a team of experienced industry professionals focused on
-            delivering high-quality energy products, agricultural oils, and
-            essential raw materials, alongside innovative technological
-            solutions to meet global market demands.
+            ETECH Global Trading is a international trading enterprise,
+            strategically headquartered in Dubai, with a strong presence in key
+            global markets including California, London, and East Asia. With
+            decades of proven expertise, we deliver integrated industrial
+            solutions that drive business success across industries and borders.
           </p>
           <p>
-            With a proven track record in global markets, we provide premium
-            energy resources and essential materials like Diesel, LNG, Palm Oil,
-            and minerals, ensuring sustainability and excellence in every
-            project.
+            Our pioneering legacy dates back to the early 1990s, when our
+            founding team (ABS Exporters) became the first to import bitumen to
+            India’s east coast via the Vizag port. This milestone was followed
+            by a successful road-laying pilot project in central Chennai,
+            executed by ABS Construction and approved by the national highway
+            authority.
           </p>
         </div>
         <div className="section-right__container">

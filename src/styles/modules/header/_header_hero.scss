@@ -19,6 +19,10 @@
     padding: 190px 0 90px;
   }
 
+  @include breakpoint(499px) {
+    padding: 170px 0 90px;
+  }
+
   .header-hero__container {
     width: 90%;
     max-width: 1400px;

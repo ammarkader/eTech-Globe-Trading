@@ -44,10 +44,15 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px 40px;
+      gap: 50px;
 
       @include respond-below(sm) {
+        gap: 40px;
+      }
+
+      @include respond-below(xs) {
         grid-template-columns: 1fr;
+        gap: 70px;
       }
 
       .event-card {
@@ -63,11 +68,15 @@
           img {
             width: 100%;
             max-width: 75%;
-            align-items: 16/9;
-            object-fit: cover;
+            height: 130px;
+            object-fit: contain;
 
             @include respond-below(xs) {
-              max-width: 100%;
+              width: auto;
+              max-width: none;
+              max-width: 300px;
+              height: auto;
+              object-fit: cover;
             }
           }
         }
