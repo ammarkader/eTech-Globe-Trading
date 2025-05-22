@@ -52,10 +52,10 @@ const teamData = [
   },
   {
     id: 7,
-    name: "Lee",
-    designation: "Marketing Director, South korea",
+    name: "Hee Kyun Lee",
+    designation: "Overseas Sales Director, South korea",
     image: IMG7,
-    alt: "An image of Lee",
+    alt: "An image of Hee Kyun Lee",
   },
 ];
 
