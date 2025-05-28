@@ -50,13 +50,6 @@ const teamData = [
     image: IMG6,
     alt: "An image of Jun Yong Lee",
   },
-  {
-    id: 7,
-    name: "Hee Kyun Lee",
-    designation: "Overseas Sales Director, South korea",
-    image: IMG7,
-    alt: "An image of Hee Kyun Lee",
-  },
 ];
 
 function Team() {
