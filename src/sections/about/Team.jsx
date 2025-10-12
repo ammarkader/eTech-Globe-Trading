@@ -5,6 +5,7 @@ import IMG4 from "@/assets/img-team-4.jpeg";
 import IMG5 from "@/assets/img-team-5.jpg";
 import IMG6 from "@/assets/img-team-6.jpg";
 import IMG7 from "@/assets/img-team-8.jpg";
+import IMG8 from "@/assets/img-team-7.jpg";
 import "@/styles/pages/about/_aboutpage_team_block.scss";
 
 const teamData = [
@@ -56,6 +57,13 @@ const teamData = [
     designation: "Executive Director, South korea",
     image: IMG6,
     alt: "An image of Jun Yong Lee",
+  },
+  {
+    id: 8,
+    name: "Hee kyun Lee",
+    designation: "Overseas Sales Director, South korea",
+    image: IMG8,
+    alt: "An image of Hee kyun Lee",
   },
 ];
 
