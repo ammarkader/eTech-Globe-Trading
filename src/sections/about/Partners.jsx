@@ -13,20 +13,20 @@ const partnersData = [
     alt: "logo of our partner",
     url: "https://www.gladdrugs.in/",
   },
+  // {
+  //   id: 2,
+  //   image: IMG2,
+  //   alt: "logo of our partner",
+  //   url: "",
+  // },
+  // {
+  //   id: 3,
+  //   image: IMG3,
+  //   alt: "logo of our partner",
+  //   url: "",
+  // },
   {
     id: 2,
-    image: IMG2,
-    alt: "logo of our partner",
-    url: "",
-  },
-  {
-    id: 3,
-    image: IMG3,
-    alt: "logo of our partner",
-    url: "",
-  },
-  {
-    id: 4,
     image: IMG4,
     alt: "logo of our partner",
     url: "",
@@ -38,7 +38,7 @@ const partnersData = [
   //   url: "",
   // },
   {
-    id: 6,
+    id: 3,
     image: IMG6,
     alt: "logo of our partner",
     url: "",
