@@ -8,8 +8,8 @@ import FeaturedQuote from "@/components/FeaturedQuote";
 
 function Layout() {
   const quote = {
-    text: `Success isn’t about how fast you climb, but how firmly you plant each step. Build relationships before empires, and remember that the most valuable currency in business is trust earned over time.`,
-    author: `Neel Naicker`,
+    text: `Businesses need to go beyond the interest of their companies to the communities they serve`,
+    author: `Ratan Tata`,
   };
 
   return (
