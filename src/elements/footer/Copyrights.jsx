@@ -7,7 +7,7 @@ function Copyrights() {
       aria-labelledby="copyrights-heading"
     >
       <div className="footer-copyrights__container">
-        <p id="copyrights-heading">© 2025 ETech Global. All Rights Reserved.</p>
+        <p id="copyrights-heading">© 2026 ETech Global. All Rights Reserved.</p>
         <p>
           Website by{" "}
           <a
