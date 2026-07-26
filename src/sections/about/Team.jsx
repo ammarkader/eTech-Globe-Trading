@@ -1,11 +1,10 @@
-import IMG1 from "@/assets/img-team-1.jpg";
-import IMG2 from "@/assets/img-team-2.jpg";
-import IMG3 from "@/assets/img-team-3.jpg";
-import IMG4 from "@/assets/img-team-4.jpeg";
-import IMG5 from "@/assets/img-team-5.jpg";
-import IMG6 from "@/assets/img-team-6.jpg";
-import IMG7 from "@/assets/img-team-8.jpg";
-import IMG8 from "@/assets/img-team-7.jpg";
+import IMG1 from "@/assets/img-shaik.png";
+import IMG2 from "@/assets/img-sahul.png";
+import IMG3 from "@/assets/img-ramesh.png";
+import IMG4 from "@/assets/img-abu.png";
+import IMG5 from "@/assets/img-team-6.jpg";
+import IMG6 from "@/assets/img-hee.png";
+
 import "@/styles/pages/about/_aboutpage_team_block.scss";
 
 const teamData = [
@@ -23,46 +22,32 @@ const teamData = [
     image: IMG2,
     alt: "An image of Sahul Hameed Abubacker",
   },
-  // {
-  //   id: 3,
-  //   name: "Neel Naicker",
-  //   designation: "Executive Director, USA",
-  //   image: IMG3,
-  //   alt: "An image of Neel Naicker",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Sam.M",
-  //   designation: "Executive Director, USA",
-  //   image: IMG4,
-  //   alt: "An image of Sam.M",
-  // },
   {
     id: 3,
     name: "Ramesh Mahalingam",
     designation: "Associate Director, UK",
-    image: IMG7,
+    image: IMG3,
     alt: "An image of Ramesh Mahalingam",
   },
   {
     id: 4,
     name: "Abubacker Hasan",
     designation: "BDM, UK",
-    image: IMG5,
+    image: IMG4,
     alt: "An image of Abubacker Hasan",
   },
   {
     id: 5,
     name: "Jun Yong Lee",
     designation: "Executive Director, South korea",
-    image: IMG6,
+    image: IMG5,
     alt: "An image of Jun Yong Lee",
   },
   {
     id: 6,
     name: "Hee kyun Lee",
     designation: "Overseas Sales Director, South korea",
-    image: IMG8,
+    image: IMG6,
     alt: "An image of Hee kyun Lee",
   },
 ];
