@@ -52,6 +52,21 @@ function Main() {
                 </Link>
               </li>
             </ul>
+            <div className="title">
+              <h3>Social</h3>
+            </div>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/etech-group-of-companies/"
+                  aria-label="View our Linkedin page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Linkedin
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="contact">
             <div className="title">

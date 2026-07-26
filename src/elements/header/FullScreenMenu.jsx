@@ -127,9 +127,10 @@ function FullScreenMenu({ show, onSetToggle }) {
             <div className="content">
               <p className="address">
                 <a
-                  href="mailto:info@etechglobe.com"
-                  target="_blank"
+                  href="https://maps.app.goo.gl/DdmJE4p382dLa4aZA"
                   aria-label="View our office location on Google Maps"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   ETECH Trading Globe FZCO <br />
                   IFZA Business Park, DDP, Building A1, Dubai Digital Park,

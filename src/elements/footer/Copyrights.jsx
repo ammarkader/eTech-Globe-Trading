@@ -8,17 +8,7 @@ function Copyrights() {
     >
       <div className="footer-copyrights__container">
         <p id="copyrights-heading">© 2026 ETech Global. All Rights Reserved.</p>
-        <p>
-          Website by{" "}
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Urbanist Website"
-          >
-            Urbanist
-          </a>
-        </p>
+        <p>Website by Urbanist</p>
       </div>
     </section>
   );

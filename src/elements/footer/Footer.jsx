@@ -7,7 +7,7 @@ import Newsletter from "./Newsletter";
 function Footer({ page }) {
   return (
     <footer className="footer" role="contentinfo">
-      {page.events && <Events />}
+      {/* {page.events && <Events />} */}
       {page.ctaBanner && <CtaBanner />}
       <Newsletter />
       <Main />
