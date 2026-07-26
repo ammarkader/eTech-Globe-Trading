@@ -60,7 +60,7 @@ function Main() {
             <div className="content">
               <p className="address">
                 <a
-                  href="https://www.google.com/maps?q=Office+No.43-44+Dubai+Municipality+Bur+Dubai+Al+Fahidi"
+                  href="https://maps.app.goo.gl/vVEStcwtiCM38tLe7"
                   aria-label="View our main office location on Google Maps"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -73,7 +73,7 @@ function Main() {
               </p>
               <p className="address">
                 <a
-                  href="https://www.google.com/maps?q=Office+No.43-44+Dubai+Municipality+Bur+Dubai+Al+Fahidi"
+                  href="https://maps.app.goo.gl/DdmJE4p382dLa4aZA"
                   aria-label="View our second office location on Google Maps"
                   target="_blank"
                   rel="noopener noreferrer"

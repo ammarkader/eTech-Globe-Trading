@@ -31,7 +31,7 @@ function ContactForm() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -41,10 +41,10 @@ function ContactForm() {
         },
         () => {
           toast.error(
-            "There was an error sending your message. Please try again."
+            "There was an error sending your message. Please try again.",
           );
           setIsSending(false);
-        }
+        },
       );
   };
 
@@ -64,7 +64,7 @@ function ContactForm() {
               <h3>Address</h3>
               <p>
                 <a
-                  href="#"
+                  href="https://maps.app.goo.gl/vVEStcwtiCM38tLe7"
                   target="_blank"
                   aria-label="View our main office location on Google Maps"
                   rel="noopener noreferrer"
@@ -81,7 +81,7 @@ function ContactForm() {
               <h3>Address</h3>
               <p>
                 <a
-                  href="#"
+                  href="https://maps.app.goo.gl/DdmJE4p382dLa4aZA"
                   target="_blank"
                   aria-label="View our second office location on Google Maps"
                   rel="noopener noreferrer"
