@@ -2,7 +2,7 @@ import IMG1 from "@/assets/img-shaik.png";
 import IMG2 from "@/assets/img-sahul.png";
 import IMG3 from "@/assets/img-ramesh.png";
 import IMG4 from "@/assets/img-abu.png";
-import IMG5 from "@/assets/img-team-6.jpg";
+import IMG5 from "@/assets/img-jun.png";
 import IMG6 from "@/assets/img-hee.png";
 
 import "@/styles/pages/about/_aboutpage_team_block.scss";
