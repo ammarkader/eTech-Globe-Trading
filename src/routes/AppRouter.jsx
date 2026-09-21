@@ -6,6 +6,7 @@ const Products = lazy(() => import("../pages/Products"));
 const Services = lazy(() => import("../pages/Services"));
 const About = lazy(() => import("../pages/About"));
 const Contact = lazy(() => import("../pages/Contact"));
+const IT = lazy(() => import("../pages/IT"));
 
 function AppRouter() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function AppRouter() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/it" element={<IT />} />
         </Routes>
       </Suspense>
     </>
