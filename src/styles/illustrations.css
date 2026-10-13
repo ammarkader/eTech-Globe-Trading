@@ -1,0 +1,326 @@
+/*
+ * Movement inside the illustrations. Apart from the division icons, every rule
+ * here is a small continuous CSS animation on part of an SVG; nothing moves when
+ * the visitor prefers reduced motion.
+ */
+
+/* ---- Division icons (src/components/illustrations/DivisionIcon.tsx) ---- */
+
+/*
+ * Unlike the rest of this file, the icons are still (changed by request; in
+ * etech-final.html they moved all the time). While a card is hovered or holds
+ * keyboard focus, one part of its icon moves a little and settles, and it returns
+ * when the card is left. --icon-on is the switch, 0 or 1: each part's place is
+ * worked out from it and reached by a transition. It is never switched on for
+ * visitors who prefer reduced motion, nor by hover on a device that cannot hover.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) {
+    a:hover > .division-icon {
+      --icon-on: 1;
+    }
+  }
+  a:focus-visible > .division-icon {
+    --icon-on: 1;
+  }
+}
+
+.division-icon [class^='icon-'] {
+  transform-box: view-box;
+  transition:
+    transform 500ms cubic-bezier(0.3, 0.7, 0.3, 1),
+    stroke-dashoffset 800ms ease-in-out;
+}
+
+.division-icon .icon-tilt {
+  transform-origin: 12px 16px;
+  transform: translateY(calc(var(--icon-on, 0) * -0.6px))
+    rotate(calc(var(--icon-on, 0) * -4deg));
+}
+.division-icon .icon-drift {
+  transform: translateX(calc(var(--icon-on, 0) * 1.5px));
+}
+.division-icon .icon-lower {
+  transform: translateY(calc(var(--icon-on, 0) * 2.5px));
+}
+.division-icon .icon-fall {
+  transform: translateY(calc(var(--icon-on, 0) * 1.4px));
+}
+/* A third of a turn puts each recycling arrow on the next one's place; a tooth's turn does the same for the gear. */
+.division-icon .icon-turn {
+  transform-origin: 12px 12px;
+  transform: rotate(calc(var(--icon-on, 0) * 120deg));
+}
+.division-icon .icon-turn-tooth {
+  transform: rotate(calc(var(--icon-on, 0) * 45deg));
+}
+/* The line is one dash as long as itself (pathLength 1). Moved on by two lengths, it leaves to the right and comes back from the left. */
+.division-icon .icon-trace {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: calc(var(--icon-on, 0) * -2);
+}
+
+/* ---- Header scenes (src/components/illustrations/Scene.tsx) ---- */
+
+.scene .sc-waves {
+  animation: sc-wave 8s linear infinite;
+}
+.scene .sc-ship {
+  animation: sc-sail 26s linear infinite;
+}
+.scene .sc-bob {
+  animation: sc-bob 3s ease-in-out infinite alternate;
+}
+.scene .sc-gull {
+  animation: sc-gull 14s linear infinite;
+}
+.scene .sc-jib {
+  transform-origin: 388px 60px;
+  animation: sc-jib 9s ease-in-out infinite alternate;
+}
+.scene .sc-hook {
+  animation: sc-hook 4.5s ease-in-out infinite alternate;
+}
+.scene .sc-floor {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: sc-rise 9s ease-in-out infinite;
+}
+.scene .sc-floor.f2 {
+  animation-delay: 1.2s;
+}
+.scene .sc-beam {
+  transform-origin: 210px 160px;
+  animation: sc-nod 2.6s ease-in-out infinite alternate;
+}
+.scene .sc-crank {
+  transform-origin: 300px 230px;
+  animation: sc-spin 5.2s linear infinite;
+}
+.scene .sc-flare {
+  animation: sc-flare 1.4s ease-in-out infinite alternate;
+}
+.scene .sc-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sc-ping 2.4s ease-in-out infinite;
+}
+.scene .sc-node.n2 {
+  animation-delay: 0.6s;
+}
+.scene .sc-node.n3 {
+  animation-delay: 1.2s;
+}
+.scene .sc-node.n4 {
+  animation-delay: 1.8s;
+}
+.scene .sc-ecg {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: sc-draw 4s linear infinite;
+}
+.scene .sc-gear.g1 {
+  animation: sc-spin 12s linear infinite;
+}
+.scene .sc-gear.g2 {
+  animation: sc-spin 7s linear infinite reverse;
+}
+.scene .sc-belt {
+  animation: sc-belt 6s linear infinite;
+}
+.scene .sc-drill {
+  animation: sc-drill 3.2s ease-in-out infinite alternate;
+}
+.scene .sc-boat {
+  animation: sc-boat 22s linear infinite;
+}
+.scene .sc-ore {
+  animation: sc-ore 5s linear infinite;
+}
+
+@keyframes sc-wave {
+  to {
+    transform: translateX(100px);
+  }
+}
+@keyframes sc-sail {
+  from {
+    transform: translateX(-240px);
+  }
+  to {
+    transform: translateX(640px);
+  }
+}
+@keyframes sc-bob {
+  to {
+    transform: translateY(5px) rotate(0.6deg);
+  }
+}
+@keyframes sc-gull {
+  from {
+    transform: translate(620px, 70px);
+  }
+  to {
+    transform: translate(-40px, 40px);
+  }
+}
+@keyframes sc-jib {
+  from {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(4deg);
+  }
+}
+@keyframes sc-hook {
+  to {
+    transform: translateY(40px);
+  }
+}
+@keyframes sc-rise {
+  0%,
+  15% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  35%,
+  85% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sc-nod {
+  from {
+    transform: rotate(-9deg);
+  }
+  to {
+    transform: rotate(9deg);
+  }
+}
+@keyframes sc-flare {
+  to {
+    opacity: 0.35;
+    transform: translateY(-3px);
+  }
+}
+@keyframes sc-ping {
+  50% {
+    transform: scale(1.7);
+    opacity: 0.5;
+  }
+}
+@keyframes sc-draw {
+  70% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+@keyframes sc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sc-belt {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(220px);
+  }
+}
+@keyframes sc-drill {
+  to {
+    transform: translateY(34px);
+  }
+}
+@keyframes sc-boat {
+  from {
+    transform: translateX(640px);
+  }
+  to {
+    transform: translateX(-160px);
+  }
+}
+@keyframes sc-ore {
+  from {
+    transform: translate(125px, 272px);
+  }
+  to {
+    transform: translate(470px, 104px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene * {
+    animation: none !important;
+  }
+}
+
+/* ---- Hero globe (src/components/illustrations/HeroGlobe.tsx) ---- */
+
+/*
+ * A short stretch of light travels along each trade route, then the route rests.
+ * Each route starts at its own moment (set on the element), so one or two are lit
+ * at a time. Before it starts and while it rests, the light is off the route.
+ */
+.hero-globe .globe-pulse {
+  stroke-opacity: 0.85;
+  stroke-dasharray: 0.16 1.84;
+  stroke-dashoffset: 0.16;
+  animation: globe-pulse 14.4s linear infinite both;
+}
+@keyframes globe-pulse {
+  from {
+    stroke-dashoffset: 0.16;
+  }
+  22%,
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+/*
+ * A soft patch of light crosses the sphere from the upper left to the lower right in
+ * about ten seconds, then the globe rests for six. It moves as something on a turning
+ * sphere does: slowly and narrow at the edges, quicker and full size in the middle.
+ * It is the content of a mask, so all it does is show a second layer of the dots.
+ */
+.hero-globe .globe-light {
+  opacity: 0;
+  animation: globe-light 16s infinite both;
+}
+@keyframes globe-light {
+  0% {
+    transform: translate(-340px, -150px) scale(0.3, 0.85);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+  }
+  8% {
+    opacity: 1;
+  }
+  31% {
+    transform: translate(0, -20px) scale(1);
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  }
+  54% {
+    opacity: 1;
+  }
+  62%,
+  100% {
+    transform: translate(340px, 110px) scale(0.3, 0.85);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-globe .globe-pulse,
+  .hero-globe .globe-light {
+    animation: none;
+  }
+}

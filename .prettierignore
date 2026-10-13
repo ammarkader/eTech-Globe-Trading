@@ -1,0 +1,8 @@
+# Build output, generated route types and lockfile
+build
+.react-router
+package-lock.json
+
+# Approved source of truth and its specification: never reformat
+etech-final.html
+ETECH-REACT-MIGRATION.md
