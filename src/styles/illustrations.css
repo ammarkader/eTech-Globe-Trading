@@ -266,20 +266,23 @@
 
 /*
  * A short stretch of light travels along each trade route, then the route rests.
- * Each route starts at its own moment (set on the element), so one or two are lit
- * at a time. Before it starts and while it rests, the light is off the route.
+ * Each route starts at its own moment (set on the element), 1.6s after the one
+ * before it, and its light takes 3.2s to arrive, so two are lit at a time. --light
+ * (also set on the element) is the share of the route the light covers, which makes
+ * the light the same length on every route. Before it starts and while it rests,
+ * the light is off the route.
  */
 .hero-globe .globe-pulse {
   stroke-opacity: 0.85;
-  stroke-dasharray: 0.16 1.84;
-  stroke-dashoffset: 0.16;
-  animation: globe-pulse 14.4s linear infinite both;
+  stroke-dasharray: var(--light) 2;
+  stroke-dashoffset: var(--light);
+  animation: globe-pulse 12.8s linear infinite both;
 }
 @keyframes globe-pulse {
   from {
-    stroke-dashoffset: 0.16;
+    stroke-dashoffset: var(--light);
   }
-  22%,
+  25%,
   to {
     stroke-dashoffset: -1;
   }

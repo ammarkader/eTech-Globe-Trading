@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>ETECH</title>
+  <!-- The symbol of the ETECH logo: a bar above a narrow and a wider block. Brand violet; the lighter violet on dark browser themes. -->
+  <style>
+    path { fill: #533afd; }
+    @media (prefers-color-scheme: dark) { path { fill: #9386fe; } }
+  </style>
+  <path d="M2 2h28v10H2zM2 16h10v14H2zM16 16h14v14H16z" />
+</svg>

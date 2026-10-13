@@ -1,13 +1,16 @@
+import type { CSSProperties } from 'react'
 import { cn } from '../../lib/utils'
 import {
   dotLayers,
   GLOBE_EXTENT,
   GLOBE_RADIUS,
   grid,
+  HUB_RING,
   hubs,
   routePoints,
   routes,
 } from './heroGlobeGeometry'
+import { land } from './heroGlobeLand'
 
 interface HeroGlobeProps {
   className?: string
@@ -16,14 +19,23 @@ interface HeroGlobeProps {
 /** How far the haze around the sphere reaches, as a share of the sphere's radius. */
 const HAZE_REACH = 1.044
 
-/** A light travels along each route in turn; these are the routes' places in that order. */
-const PULSE_ORDER = [0, 4, 2, 7, 5, 1, 8, 3, 6]
+/**
+ * A light travels along each route in turn, one starting every 1.6s (16 tenths of a
+ * second); these are the routes' places in that order. A light takes two places'
+ * time to arrive, so a route that continues another from the hub where it ends
+ * comes two places after it, and the light seems to pass through the hub and go on:
+ * Dubai to India to Indonesia and back to Dubai, then on to Saudi Arabia.
+ */
+const PULSE_ORDER = [6, 5, 0, 3, 7, 2, 4, 1]
+const PULSE_STAGGER_TENTHS = 16
 
 /**
  * The globe of the homepage hero: ETECH hubs in navy, trade routes and their far ends
- * in violet, on a dotted sphere with its parallels and meridians.
+ * in violet, on a dotted sphere with its parallels and meridians and, faintly, the
+ * continents, so each marker stands on the place it is named for.
  *
- * It is drawn as SVG from geometry worked out on a sphere (heroGlobeGeometry.ts).
+ * It is a flat drawing: SVG from geometry worked out on a sphere (heroGlobeGeometry.ts)
+ * and a land outline made for the same view (heroGlobeLand.ts).
  * It is decorative: the legend beside it and the hero text say what it shows, so the
  * hero hides it from assistive technology.
  *
@@ -43,6 +55,10 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
       className={cn('hero-globe', className)}
     >
       <defs>
+        {/* The land is drawn past the edge of the sphere and cut off at it. */}
+        <clipPath id="hero-globe-disc">
+          <circle r={GLOBE_RADIUS} />
+        </clipPath>
         {/* The body of the sphere: lit from the upper left, faintly lilac towards the edge. */}
         <radialGradient id="hero-globe-body" cx="37%" cy="31%" r="76%">
           <stop offset="0" stopColor="#fff" />
@@ -125,6 +141,17 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         strokeWidth=".8"
         strokeOpacity=".04"
       />
+      {/* The continents: a soft tint with a fine coastline, under the dots, the lines and the network. */}
+      <path
+        d={land}
+        clipPath="url(#hero-globe-disc)"
+        fillRule="evenodd"
+        className="fill-accent stroke-accent"
+        fillOpacity=".07"
+        strokeWidth=".7"
+        strokeOpacity=".2"
+        strokeLinejoin="round"
+      />
       <g
         id="hero-globe-dots"
         fill="none"
@@ -161,21 +188,31 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
       {/* Trade routes, and the light that travels along each. */}
       <g fill="none" strokeLinecap="round" className="stroke-accent">
         {routes.map((route) => (
-          <path key={route} d={route} strokeWidth="1.5" strokeOpacity=".62" />
+          <path
+            key={route.path}
+            d={route.path}
+            strokeWidth="1.5"
+            strokeOpacity=".62"
+          />
         ))}
         {routes.map((route, index) => (
           <path
-            key={route}
-            d={route}
+            key={route.path}
+            d={route.path}
             pathLength={1}
             strokeWidth="2.6"
             className="globe-pulse"
-            style={{ animationDelay: `${PULSE_ORDER[index] * 1.6}s` }}
+            style={
+              {
+                '--light': route.light,
+                animationDelay: `${(PULSE_ORDER[index] * PULSE_STAGGER_TENTHS) / 10}s`,
+              } as CSSProperties
+            }
           />
         ))}
       </g>
 
-      {/* ETECH hubs are a navy point in a white ring, inside a fine outer ring. The outer rings go first. */}
+      {/* ETECH hubs are a navy point in a white ring, inside a fine outer ring where the routes stop. The outer rings go first. */}
       <g
         fill="#fff"
         fillOpacity=".55"
@@ -183,7 +220,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         strokeOpacity=".2"
       >
         {hubs.map(([x, y]) => (
-          <circle key={`${x} ${y}`} cx={x} cy={y} r="16" />
+          <circle key={`${x} ${y}`} cx={x} cy={y} r={HUB_RING} />
         ))}
       </g>
 

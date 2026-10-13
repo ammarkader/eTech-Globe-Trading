@@ -6,8 +6,9 @@
  * 347.6 and sits in the middle of a square 862.1 wide. In the calculations x runs to
  * the right, y down the page and z towards the viewer.
  *
- * The hubs and route points stand where they stood in etech-final.html. They are a
- * schematic of the network, not a map.
+ * The globe shows the Earth centred on 24 degrees north, 60 degrees east. The land
+ * (heroGlobeLand.ts) and the hubs and route points below are placed by latitude and
+ * longitude on that same view, so every marker stands on the place it is named for.
  */
 
 type Point = readonly [x: number, y: number]
@@ -24,6 +25,8 @@ const DEGREES = Math.PI / 180
 /** The north pole leans this far towards the viewer, and this far to the left. */
 const TILT = 24 * DEGREES
 const ROLL = -9 * DEGREES
+/** The meridian that faces the viewer, in degrees east. The lines drawn every 30 degrees are then true meridians. */
+const CENTRAL_MERIDIAN = 60
 
 const round = (value: number) => Math.round(value * 10) / 10
 
@@ -50,21 +53,29 @@ function onSurface([x, y]: Point): Vector {
 
 // ---- Nodes ------------------------------------------------------------------
 
-/** ETECH hubs. */
+/** Where a place on the Earth is seen on the page, by its latitude and longitude in degrees (north and east positive). */
+function place(latitude: number, longitude: number): Point {
+  const [x, y] = onGlobe(
+    latitude * DEGREES,
+    (longitude - CENTRAL_MERIDIAN) * DEGREES,
+  )
+  return [round(x), round(y)]
+}
+
+/** ETECH hubs: Dubai, Visakhapatnam, Riyadh (for Saudi Arabia) and Jakarta (for Indonesia). */
 export const hubs: readonly Point[] = [
-  [-54.1, -43.3],
-  [136.6, 48.8],
-  [-115.7, -43.3],
-  [284, 141.7],
+  place(25.2, 55.3),
+  place(17.7, 83.3),
+  place(24.7, 46.7),
+  place(-6.2, 106.8),
 ]
 
-/** The other ends of the trade routes. */
+/** The other ends of the trade routes: Chittagong, Mundra, Zambia and Colombo. */
 export const routePoints: readonly Point[] = [
-  [-43.9, -36],
-  [154.5, 9.3],
-  [53.7, -24],
-  [-224.5, 216],
-  [-181.4, -129.4],
+  place(22.3, 91.8),
+  place(22.8, 69.7),
+  place(-15.4, 28.3),
+  place(6.9, 79.9),
 ]
 
 // ---- Dots -------------------------------------------------------------------
@@ -83,6 +94,8 @@ const RING_DOTS = 360 / RING_STEP
 const DOT_LEVELS = 6
 /** Where the light comes from: above and to the left of the viewer. */
 const LIGHT: Vector = [-0.42, -0.5, 0.757]
+/** Radius of the fine ring around a hub. Routes stop at it. */
+export const HUB_RING = 16
 /** Dots keep this far from the centre of a hub or route point. */
 const HUB_CLEARANCE = 21
 const POINT_CLEARANCE = 12
@@ -237,34 +250,51 @@ export const grid = buildGrid()
 
 // ---- Routes -----------------------------------------------------------------
 
+/** A route as drawn. */
+export interface Route {
+  path: string
+  /** The share of the route that its travelling light covers: the light is the same length on every route. */
+  light: number
+}
+
+/** Length of the light that travels along a route, and the most of a short route it may cover. */
+const LIGHT_LENGTH = 34
+const LIGHT_SHARE_LIMIT = 0.5
+
 interface RoutePlan {
   from: Point
   to: Point
-  /** How far the route swings out sideways at its middle, to keep it clear of a neighbour. */
+  /** How far the route swings out sideways at its middle (to the right of its direction when positive), to keep it clear of a neighbour or a marker. */
   sway?: number
 }
 
 const [dubai, india, saudi, indonesia] = hubs
-const [gulf, bay, sea, south, west] = routePoints
+const [bangladesh, mundra, zambia, sriLanka] = routePoints
 
-/** The nine routes of etech-final.html, between the same nodes. */
+/**
+ * The routes, each from its origin to its destination: the light on a route travels
+ * that way. They leave a hub in clearly different directions, and none passes
+ * through the marker of a node it does not serve.
+ */
 const ROUTES: readonly RoutePlan[] = [
-  { from: dubai, to: india, sway: -9 },
-  { from: dubai, to: saudi, sway: 9 },
-  { from: dubai, to: indonesia, sway: -26 },
-  { from: indonesia, to: gulf, sway: -15 },
-  { from: south, to: bay },
-  { from: gulf, to: sea, sway: 8 },
-  { from: dubai, to: west, sway: -12 },
-  { from: india, to: indonesia, sway: 9 },
-  { from: saudi, to: west, sway: 10 },
+  { from: dubai, to: saudi },
+  { from: dubai, to: mundra, sway: -7 },
+  { from: dubai, to: india, sway: 26 },
+  { from: india, to: bangladesh },
+  { from: india, to: sriLanka },
+  { from: india, to: indonesia },
+  { from: indonesia, to: dubai, sway: -62 },
+  { from: zambia, to: india },
 ]
+
+const isHub = (node: Point) => hubs.includes(node)
 
 /**
  * A route: the shortest way round the sphere between two nodes, lifted off the
  * surface in an arc that is higher the longer the route. Returned as a smooth curve.
+ * At a hub the curve stops at the hub's ring instead of running on to its centre.
  */
-function buildRoute({ from, to, sway = 0 }: RoutePlan): string {
+function buildRoute({ from, to, sway = 0 }: RoutePlan): Route {
   const start = onSurface(from)
   const end = onSurface(to)
   const dot =
@@ -286,10 +316,23 @@ function buildRoute({ from, to, sway = 0 }: RoutePlan): string {
     ]
   }
 
+  // How far along the route, going from `inside` towards `outside`, it crosses the ring of the hub at `node`.
+  const ringCrossing = (node: Point, inside: number, outside: number) => {
+    for (let step = 0; step < 20; step++) {
+      const middle = (inside + outside) / 2
+      const [x, y] = at(middle)
+      if (Math.hypot(x - node[0], y - node[1]) < HUB_RING) inside = middle
+      else outside = middle
+    }
+    return outside
+  }
+  const first = isHub(from) ? ringCrossing(from, 0, 0.5) : 0
+  const last = isHub(to) ? ringCrossing(to, 1, 0.5) : 1
+
   // a smooth curve through evenly spaced points of the route
   const STEPS = 8
   const points = Array.from({ length: STEPS + 1 }, (_, index) =>
-    at(index / STEPS),
+    at(first + ((last - first) * index) / STEPS),
   )
   let path = `M${round(points[0][0])} ${round(points[0][1])}`
   for (let index = 0; index < STEPS; index++) {
@@ -300,7 +343,24 @@ function buildRoute({ from, to, sway = 0 }: RoutePlan): string {
     path += `C${round(p0[0] + (p1[0] - before[0]) / 6)} ${round(p0[1] + (p1[1] - before[1]) / 6)} ${round(p1[0] - (after[0] - p0[0]) / 6)} ${round(p1[1] - (after[1] - p0[1]) / 6)} ${round(p1[0])} ${round(p1[1])}`
   }
 
-  return path
+  const drawn = points.reduce(
+    (sum, point, index) =>
+      index === 0
+        ? 0
+        : sum +
+          Math.hypot(
+            point[0] - points[index - 1][0],
+            point[1] - points[index - 1][1],
+          ),
+    0,
+  )
+
+  return {
+    path,
+    light:
+      Math.round(Math.min(LIGHT_SHARE_LIMIT, LIGHT_LENGTH / drawn) * 1000) /
+      1000,
+  }
 }
 
-export const routes: readonly string[] = ROUTES.map(buildRoute)
+export const routes: readonly Route[] = ROUTES.map(buildRoute)

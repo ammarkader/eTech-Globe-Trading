@@ -28,6 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={site.name} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
