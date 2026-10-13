@@ -1,0 +1,304 @@
+/* Scan only the app for class names; etech-final.html in the project root is reference material. */
+@import 'tailwindcss' source('..');
+@import './illustrations.css';
+/* Content and type modules hold text, not class names. */
+@source not '../data';
+@source not '../types';
+
+/*
+ * ETECH design tokens.
+ * Every value comes from the :root blocks of etech-final.html, the approved source of truth.
+ * The original custom property is noted beside each token.
+ */
+@theme {
+  /* Breakpoints: Tailwind's defaults are removed; see the custom variants below */
+  --breakpoint-*: initial;
+
+  /* Colour: only the approved palette is available as utilities */
+  --color-*: initial;
+  --color-white: #fff;
+  --color-page: #f7f9fc; /* --bg */
+  --color-surface: #e2e4ff; /* --surface */
+  --color-sheet: #fbfbff; /* --sheet */
+  --color-heading: #1d1e25; /* --head */
+  --color-copy: #50617a; /* --text */
+  --color-line: #e5edf5; /* --border */
+  --color-accent: #533afd; /* --accent */
+  --color-accent-hover: #4634da; /* --accent-hover */
+  --color-accent-soft: #9386fe; /* --accent-soft */
+  --color-deep: #0d1738; /* --deep */
+  --color-deep-2: #181c56; /* --deep-2 */
+  --color-on-deep: #f7f9fc; /* --on-deep */
+  --color-on-deep-2: rgba(226, 228, 255, 0.74); /* --on-deep-2 */
+  --color-on-deep-3: rgba(226, 228, 255, 0.52); /* --on-deep-3 */
+  --color-deep-line: rgba(226, 228, 255, 0.12); /* --deep-line */
+  --color-accent-mid: #3d5bf5; /* hero heading gradient, middle stop */
+  --color-accent-sky: #0c8fe0; /* hero heading gradient, end stop */
+  --color-card-hover-line: rgba(83, 58, 253, 0.28); /* --card-border-hover */
+
+  /* Typeface */
+  --font-sans:
+    'Inter', 'Segoe UI', system-ui, sans-serif; /* --display, --body */
+
+  /* Type scale */
+  --text-h1: clamp(2.5rem, 1.6rem + 3.2vw, 4rem); /* --fs-h1 */
+  --text-h2: clamp(2rem, 1.2rem + 2.7vw, 3.25rem); /* --fs-h2 */
+  --text-h2-panel: clamp(1.75rem, 1rem + 2vw, 2.5rem); /* --fs-h2-panel */
+  --text-h2-sub: clamp(1.5rem, 1.1rem + 1.2vw, 2rem); /* --fs-h2-sub */
+  --text-h3: 1.5rem; /* --fs-h3 */
+  --text-title: 1.25rem; /* --fs-title */
+  --text-title-sm: 1.125rem; /* --fs-title-sm */
+  --text-lead: 1.125rem; /* --fs-lead */
+  --text-body: 1.0625rem; /* --fs-body */
+  --text-card: 0.9375rem; /* --fs-card */
+  --text-small: 0.875rem; /* --fs-small */
+
+  /* Spacing rhythm (responsive values are set below) */
+  --spacing-header: 72px; /* nav height */
+  --spacing-section: 112px; /* --section-y */
+  --spacing-head-gap: 56px; /* --head-gap */
+  --spacing-grid-gap: 24px; /* --gap */
+  --spacing-card: 28px; /* --pad-card */
+  --spacing-card-sm: 24px; /* --pad-card-sm */
+  --spacing-lift: 4px; /* --lift: the most a card may rise on hover */
+
+  /* Layout */
+  --container-site: 1200px; /* .container max-width */
+
+  /* Radius: 8px, 12px and 16px are Tailwind's rounded-lg, rounded-xl and rounded-2xl */
+  --radius-card: 14px; /* --radius-card */
+  --radius-panel: 20px; /* --radius-panel */
+  --radius-pill: 999px; /* --radius-pill */
+
+  /* Shadow */
+  --shadow-sm:
+    0 1px 2px rgba(13, 23, 56, 0.04), 0 2px 8px -2px rgba(13, 23, 56, 0.06); /* --shadow-sm, --card-shadow */
+  --shadow-md:
+    0 18px 36px -18px rgba(13, 23, 56, 0.22),
+    0 6px 14px -8px rgba(83, 58, 253, 0.14); /* --shadow-md */
+  --shadow-lg:
+    0 30px 60px -24px rgba(13, 23, 56, 0.35),
+    0 12px 24px -12px rgba(13, 23, 56, 0.18); /* --shadow-lg */
+  --shadow-card-hover:
+    0 12px 24px -14px rgba(13, 23, 56, 0.18),
+    0 3px 8px -4px rgba(13, 23, 56, 0.08); /* --card-shadow-hover */
+  --shadow-button:
+    0 1px 2px rgba(13, 23, 56, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.16); /* .cta */
+  --shadow-button-hover: 0 8px 20px -8px rgba(83, 58, 253, 0.6); /* .cta:hover */
+  --shadow-button-outline: 0 1px 2px rgba(13, 23, 56, 0.06); /* .hero .cta.ghost */
+  --shadow-button-dark: 0 1px 2px rgba(13, 23, 56, 0.2); /* .cta.dark */
+
+  /* Motion */
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1); /* --ease */
+  --default-transition-duration: 240ms; /* --dur */
+  --default-transition-timing-function: cubic-bezier(
+    0.22,
+    0.61,
+    0.36,
+    1
+  ); /* --ease */
+
+  /*
+   * Commodity ticker: one full pass of the repeated list in 60s (.ticker .track).
+   * The strip holds the list twice, so half its width plus half a gap is exactly one list.
+   */
+  --animate-ticker: ticker 60s linear infinite;
+
+  @keyframes ticker {
+    to {
+      transform: translateX(calc(-50% - var(--ticker-gap) / 2));
+    }
+  }
+
+  /*
+   * Inside ETECH: when the visitor changes tab, the new photograph eases from 4%
+   * enlarged back to its normal size (.explore .panel img).
+   */
+  --animate-panel-zoom: panel-zoom 6s ease-out;
+
+  @keyframes panel-zoom {
+    from {
+      transform: scale(1.04);
+    }
+  }
+
+  /*
+   * Global network: each location's pin sends out a ring that grows to 12px and
+   * fades, every 2.4s (.loc .pin, pinpulse-accent).
+   */
+  --animate-pin-pulse: pin-pulse 2.4s infinite;
+
+  @keyframes pin-pulse {
+    70% {
+      box-shadow: 0 0 0 12px rgba(83, 58, 253, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(83, 58, 253, 0);
+    }
+  }
+
+  /*
+   * Workforce photo slider: the bar along its top fills while the slider counts
+   * down to its next move (.slider.playing .bar, sl-bar). The component sets the time.
+   */
+  --animate-slider-bar: slider-bar 4.5s linear;
+
+  @keyframes slider-bar {
+    to {
+      width: 100%;
+    }
+  }
+}
+
+/*
+ * Responsive breakpoints: the exact media queries of etech-final.html.
+ * Tailwind's default breakpoints (sm, md, lg, xl, 2xl) are removed in the theme above,
+ * so only these exist. "upto-N" is max-width N px; "from-N" is min-width N px.
+ * Order matters: a narrower "upto" must override a wider one, and a wider "from" a narrower one.
+ */
+@custom-variant upto-1279 (@media (max-width: 1279px));
+@custom-variant upto-1180 (@media (max-width: 1180px));
+@custom-variant upto-1024 (@media (max-width: 1024px));
+@custom-variant upto-900 (@media (max-width: 900px));
+@custom-variant upto-899 (@media (max-width: 899px));
+@custom-variant upto-860 (@media (max-width: 860px));
+@custom-variant upto-800 (@media (max-width: 800px));
+@custom-variant upto-700 (@media (max-width: 700px));
+@custom-variant upto-640 (@media (max-width: 640px));
+@custom-variant upto-600 (@media (max-width: 600px));
+@custom-variant upto-599 (@media (max-width: 599px));
+@custom-variant upto-520 (@media (max-width: 520px));
+@custom-variant from-700 (@media (min-width: 700px));
+@custom-variant from-760 (@media (min-width: 760px));
+@custom-variant from-900 (@media (min-width: 900px));
+@custom-variant from-901 (@media (min-width: 901px));
+@custom-variant from-1280 (@media (min-width: 1280px));
+
+/*
+ * A faint 64px grid behind a band; now only the "page not found" page has it (it was
+ * removed from the homepage hero and the detail page header bands by request). It
+ * fades out from a point right of centre. Set --grid-line to the line colour for the background.
+ */
+@utility grid-backdrop {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(
+      ellipse 70% 70% at 65% 40%,
+      #000 10%,
+      transparent 75%
+    );
+  }
+}
+
+@layer base {
+  /* Responsive spacing rhythm, at the same widths as etech-final.html */
+  @media (max-width: 1024px) {
+    :root {
+      --spacing-section: 88px;
+      --spacing-head-gap: 48px;
+      --spacing-grid-gap: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    :root {
+      --spacing-section: 64px;
+      --spacing-head-gap: 40px;
+      --spacing-grid-gap: 16px;
+      --spacing-card: 24px;
+      --spacing-card-sm: 20px;
+      --text-body: 1rem;
+    }
+  }
+
+  :root {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Anchor targets stop below the fixed header. */
+  html {
+    scroll-padding-top: calc(
+      var(--spacing-header) + env(safe-area-inset-top, 0px)
+    );
+  }
+
+  /*
+   * Smooth scrolling, unless the visitor asks for reduced motion.
+   * It starts once the app is running (see src/root.tsx).
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    html[data-hydrated] {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-heading);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    letter-spacing: -0.006em;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    overflow-wrap: break-word;
+  }
+
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-surface);
+    color: var(--color-heading);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+/*
+ * Scroll reveal (src/hooks/useReveal.ts), as in etech-final.html (.reveal, .reveal.in):
+ * an element waits invisible and 24px low, then fades up into place over 700ms.
+ *
+ * These rules are outside the layers on purpose, so that a waiting element is hidden
+ * whatever utilities it carries. A revealed element should not set its own transition.
+ *
+ * Nothing is hidden before the app is running (html[data-hydrated]) or for visitors
+ * who prefer reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-hydrated] [data-reveal='hidden'] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  html[data-hydrated] [data-reveal='shown'] {
+    transition:
+      opacity 700ms var(--ease-brand),
+      transform 700ms var(--ease-brand);
+  }
+}
