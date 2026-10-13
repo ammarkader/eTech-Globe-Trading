@@ -5,9 +5,13 @@ interface DivisionIconProps {
   slug: string
 }
 
-/** One arrow of the recycling sign: an arc of the circle and its head. The sign is three of them. */
+/**
+ * One arrow of the recycling sign: it runs down a side of a triangle, round the
+ * corner and along the next side to its head. The sign is three of them, each a
+ * third of a turn about the middle of the square from the last.
+ */
 const RECYCLING_ARROW =
-  'M5.82 8.71A7 7 0 0 1 14.62 5.51M13.85 2.82L14.62 5.51L11.93 6.28'
+  'M17.8 10.44L19.79 13.9A2.6 2.6 0 0 1 17.54 17.8L12.89 17.8M15.08 19.99L12.89 17.8L15.08 15.61'
 
 /**
  * The six division icons. They are drawn to one standard: a 24-unit square of which
@@ -67,12 +71,15 @@ const ICONS: Record<string, ReactElement> = {
       <path d="M12 16.5v4M8 20.5h8" />
     </>
   ),
-  // Recycling arrows. They turn a third of the way round, onto each other's places.
+  // The recycling sign: three arrows chasing round a triangle. They turn a third of the way
+  // round, onto each other's places. The sign is set half a unit down, to sit level with the rest.
   'recycling-biomass': (
-    <g className="icon-turn">
-      <path d={RECYCLING_ARROW} />
-      <path d={RECYCLING_ARROW} transform="rotate(120 12 12)" />
-      <path d={RECYCLING_ARROW} transform="rotate(240 12 12)" />
+    <g transform="translate(0 .5)">
+      <g className="icon-turn">
+        <path d={RECYCLING_ARROW} />
+        <path d={RECYCLING_ARROW} transform="rotate(120 12 12)" />
+        <path d={RECYCLING_ARROW} transform="rotate(240 12 12)" />
+      </g>
     </g>
   ),
   // Gear. It turns by one tooth.

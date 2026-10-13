@@ -45,6 +45,9 @@ function isMessage(entry: LogEntry): entry is Message {
  *
  * The assistant needs the app to be running, so it is not in the prerendered HTML.
  * The conversation is kept while the visitor moves between pages.
+ *
+ * Both are put away while the full-screen menu is open (the header sets data-menu-open
+ * on the root element) and come back, as they were, when it closes.
  */
 export function ChatAssistant() {
   const hydrated = useHydrated()
@@ -175,7 +178,7 @@ export function ChatAssistant() {
         aria-controls={PANEL_ID}
         onClick={open ? closePanel : openPanel}
         className={cn(
-          'fixed right-5 bottom-[calc(20px+env(safe-area-inset-bottom,0px))] z-60 flex cursor-pointer items-center gap-2 rounded-pill border border-[rgba(255,255,255,0.16)] px-[18px] py-3 text-[0.95rem]/[normal] font-semibold tracking-normal text-white [box-shadow:0_14px_30px_-10px_rgba(83,58,253,0.6),0_4px_10px_-4px_rgba(13,23,56,0.3)] transition-[background-color,box-shadow] duration-200 ease-[ease] motion-reduce:transition-none upto-700:p-3',
+          'fixed right-5 bottom-[calc(20px+env(safe-area-inset-bottom,0px))] z-60 flex cursor-pointer items-center gap-2 rounded-pill border border-[rgba(255,255,255,0.16)] px-[18px] py-3 text-[0.95rem]/[normal] font-semibold tracking-normal text-white [box-shadow:0_14px_30px_-10px_rgba(83,58,253,0.6),0_4px_10px_-4px_rgba(13,23,56,0.3)] transition-[background-color,box-shadow] duration-200 ease-[ease] in-data-menu-open:hidden! motion-reduce:transition-none upto-700:p-3',
           open ? 'bg-deep' : 'bg-accent hover:bg-accent-hover',
         )}
       >
@@ -193,7 +196,7 @@ export function ChatAssistant() {
         aria-label={panel.ariaLabel}
         hidden={!open}
         onKeyDown={onKeyDown}
-        className="fixed right-5 bottom-[calc(84px+env(safe-area-inset-bottom,0px))] z-60 flex h-[min(600px,calc(100vh-120px))] w-[min(380px,calc(100vw-24px))] flex-col overflow-hidden rounded-2xl border border-line bg-sheet text-heading [box-shadow:0_30px_70px_-20px_rgba(13,23,56,0.45)] supports-[height:1dvh]:h-[min(600px,calc(100dvh-120px))] upto-520:inset-x-3 upto-520:bottom-[calc(80px+env(safe-area-inset-bottom,0px))] upto-520:h-[calc(100vh-110px-env(safe-area-inset-top,0px))] upto-520:w-auto upto-520:supports-[height:1dvh]:h-[calc(100dvh-110px-env(safe-area-inset-top,0px))]"
+        className="fixed right-5 bottom-[calc(84px+env(safe-area-inset-bottom,0px))] z-60 flex h-[min(600px,calc(100vh-120px))] w-[min(380px,calc(100vw-24px))] flex-col overflow-hidden rounded-2xl border border-line bg-sheet text-heading [box-shadow:0_30px_70px_-20px_rgba(13,23,56,0.45)] in-data-menu-open:hidden! supports-[height:1dvh]:h-[min(600px,calc(100dvh-120px))] upto-520:inset-x-3 upto-520:bottom-[calc(80px+env(safe-area-inset-bottom,0px))] upto-520:h-[calc(100vh-110px-env(safe-area-inset-top,0px))] upto-520:w-auto upto-520:supports-[height:1dvh]:h-[calc(100dvh-110px-env(safe-area-inset-top,0px))]"
       >
         <header className="flex items-center justify-between bg-deep bg-[radial-gradient(80%_140%_at_100%_0%,rgba(83,58,253,0.45),transparent_65%)] px-4 py-3.5 text-white">
           <div>

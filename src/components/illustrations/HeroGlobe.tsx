@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { type CSSProperties, useId } from 'react'
 import { cn } from '../../lib/utils'
 import {
   dotLayers,
@@ -46,6 +46,9 @@ const PULSE_STAGGER_TENTHS = 16
  */
 export function HeroGlobe({ className }: HeroGlobeProps) {
   const size = GLOBE_EXTENT * 2
+  // The gradients, mask and clip are found by id. The ids are this instance's own, so
+  // that a second globe on the page (the one in the menu) does not borrow them.
+  const id = `globe-${useId().replace(/[^a-zA-Z0-9]/g, '')}`
 
   return (
     <svg
@@ -56,17 +59,17 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
     >
       <defs>
         {/* The land is drawn past the edge of the sphere and cut off at it. */}
-        <clipPath id="hero-globe-disc">
+        <clipPath id={`${id}-disc`}>
           <circle r={GLOBE_RADIUS} />
         </clipPath>
         {/* The body of the sphere: lit from the upper left, faintly lilac towards the edge. */}
-        <radialGradient id="hero-globe-body" cx="37%" cy="31%" r="76%">
+        <radialGradient id={`${id}-body`} cx="37%" cy="31%" r="76%">
           <stop offset="0" stopColor="#fff" />
           <stop offset=".6" stopColor="#f8f7ff" />
           <stop offset="1" stopColor="#f0eeff" />
         </radialGradient>
         {/* A violet tint that gathers at the very edge, where the surface turns away. */}
-        <radialGradient id="hero-globe-limb">
+        <radialGradient id={`${id}-limb`}>
           <stop
             offset=".8"
             className="[stop-color:var(--color-accent)]"
@@ -79,7 +82,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
           />
         </radialGradient>
         {/* A thin haze just outside the sphere. It ends short of the legend below the globe. */}
-        <radialGradient id="hero-globe-haze">
+        <radialGradient id={`${id}-haze`}>
           <stop
             offset=".954"
             className="[stop-color:var(--color-accent)]"
@@ -97,7 +100,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
           />
         </radialGradient>
         {/* The outline is stronger on the side away from the light. */}
-        <linearGradient id="hero-globe-rim" x1="18%" y1="12%" x2="82%" y2="88%">
+        <linearGradient id={`${id}-rim`} x1="18%" y1="12%" x2="82%" y2="88%">
           <stop
             offset="0"
             className="[stop-color:var(--color-accent-soft)]"
@@ -110,12 +113,12 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
           />
         </linearGradient>
         {/* A soft patch of light that crosses the sphere (moved by CSS). It shows the second layer of dots. */}
-        <radialGradient id="hero-globe-glow">
+        <radialGradient id={`${id}-glow`}>
           <stop offset="0" stopColor="#fff" />
           <stop offset="1" stopColor="#fff" stopOpacity="0" />
         </radialGradient>
         <mask
-          id="hero-globe-light"
+          id={`${id}-light`}
           maskUnits="userSpaceOnUse"
           x={-GLOBE_RADIUS}
           y={-GLOBE_RADIUS}
@@ -124,14 +127,14 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         >
           <circle
             r={GLOBE_RADIUS * 0.62}
-            fill="url(#hero-globe-glow)"
+            fill={`url(#${id}-glow)`}
             className="globe-light"
           />
         </mask>
       </defs>
 
-      <circle r={GLOBE_RADIUS * HAZE_REACH} fill="url(#hero-globe-haze)" />
-      <circle r={GLOBE_RADIUS} fill="url(#hero-globe-body)" />
+      <circle r={GLOBE_RADIUS * HAZE_REACH} fill={`url(#${id}-haze)`} />
+      <circle r={GLOBE_RADIUS} fill={`url(#${id}-body)`} />
 
       {/* Parallels and meridians, kept fainter than the dots: the far side, then the dots, then the near side. */}
       <path
@@ -144,7 +147,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
       {/* The continents: a soft tint with a fine coastline, under the dots, the lines and the network. */}
       <path
         d={land}
-        clipPath="url(#hero-globe-disc)"
+        clipPath={`url(#${id}-disc)`}
         fillRule="evenodd"
         className="fill-accent stroke-accent"
         fillOpacity=".07"
@@ -153,7 +156,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         strokeLinejoin="round"
       />
       <g
-        id="hero-globe-dots"
+        id={`${id}-dots`}
         fill="none"
         strokeLinecap="round"
         className="stroke-accent"
@@ -168,7 +171,7 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         ))}
       </g>
       {/* The same dots once more, seen only where the travelling light falls: there they are stronger. */}
-      <use href="#hero-globe-dots" mask="url(#hero-globe-light)" />
+      <use href={`#${id}-dots`} mask={`url(#${id}-light)`} />
       <path
         d={grid.near}
         fill="none"
@@ -177,11 +180,11 @@ export function HeroGlobe({ className }: HeroGlobeProps) {
         strokeOpacity=".1"
       />
 
-      <circle r={GLOBE_RADIUS} fill="url(#hero-globe-limb)" />
+      <circle r={GLOBE_RADIUS} fill={`url(#${id}-limb)`} />
       <circle
         r={GLOBE_RADIUS}
         fill="none"
-        stroke="url(#hero-globe-rim)"
+        stroke={`url(#${id}-rim)`}
         strokeWidth="1.2"
       />
 

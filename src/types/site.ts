@@ -37,6 +37,14 @@ export interface SiteConfig {
   linkedInUrl: string
   navigation: readonly NavItem[]
   quoteAction: { label: string; sectionId: SectionId }
+  /** Text of the full-screen menu shown at or below 1180px. */
+  menu: {
+    eyebrow: string
+    globeLabel: string
+    globeText: string
+    tagline: string
+    strapline: string
+  }
   footer: {
     entities: string
     credit: { prefix: string; label: string; url: string }

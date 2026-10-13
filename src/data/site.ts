@@ -25,6 +25,14 @@ export const site: SiteConfig = {
     { label: 'Contact', sectionId: 'contact' },
   ],
   quoteAction: { label: 'Request a quote', sectionId: 'contact' },
+  menu: {
+    eyebrow: 'Explore ETECH',
+    globeLabel: 'Connecting opportunities',
+    globeText:
+      'Trading, building and connecting global supply chains since 1989.',
+    tagline: 'Global expertise. Local impact.',
+    strapline: 'Trading · Building · Connecting',
+  },
   footer: {
     entities:
       'ETECH Globe Trading FZCO & Co LLC · ABS Construction LLP · B&A Prime Developers · ETECH Recyclers · Green Earth Solutions',

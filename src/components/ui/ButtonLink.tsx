@@ -15,6 +15,8 @@ interface ButtonLinkBaseProps {
   variant?: ButtonVariant
   size?: ButtonSize
   className?: string
+  /** Called when the button is chosen, before the link is followed. */
+  onClick?: () => void
 }
 
 type ButtonLinkProps = ButtonLinkBaseProps &
@@ -50,13 +52,14 @@ export function ButtonLink({
   variant = 'primary',
   size = 'md',
   className,
+  onClick,
   ...link
 }: ButtonLinkProps) {
   const classes = cn(BASE, VARIANTS[variant], SIZES[size], className)
 
   if (link.to !== undefined) {
     return (
-      <Link to={link.to} className={classes}>
+      <Link to={link.to} className={classes} onClick={onClick}>
         {children}
       </Link>
     )
@@ -66,6 +69,7 @@ export function ButtonLink({
     <a
       href={link.href}
       className={classes}
+      onClick={onClick}
       {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
     >
       {children}
